@@ -1,9 +1,9 @@
 {
   "tests": [
     {
-      "name": "Pruebas Cola",
+      "name": "Pruebas Diccionario",
       "setup": "./build.sh",
-      "run": "./test_cola.sh",
+      "run": "./test_diccionario.sh",
       "input": null,
       "output": null,
       "comparison": "exact",
@@ -11,9 +11,9 @@
       "points": 5
     },
     {
-      "name": "Pruebas Lista Circular",
+      "name": "Pruebas Heap",
       "setup": "./build.sh",
-      "run": "./test_lista_circular.sh",
+      "run": "./test_heap",
       "input": null,
       "output": null,
       "comparison": "exact",

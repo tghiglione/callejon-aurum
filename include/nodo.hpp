@@ -1,42 +1,44 @@
-#ifndef AYED_TP3_1C2024_NODO_HPP
-#define AYED_TP3_1C2024_NODO_HPP
+#ifndef AYED_TPG_1C2024_NODO_HPP
+#define AYED_TPG_1C2024_NODO_HPP
 
-template<typename T>
-class cola;
+template<typename c, typename T, bool comp(c, c)>
+class diccionario;
 
-template<typename T>
-class lista_circular;
-
-template<typename T>
+template<typename c, typename T, bool comp(c, c)>
 class nodo {
 private:
-    T dato;
-    nodo<T>* anterior;
-    nodo<T>* siguiente;
-public:
-    // Constructores.
-    nodo(T dato);
+    c clave{};
+    T dato{};
+    nodo<c, T, comp>* padre;
+    nodo<c, T, comp>* hijo_izquierdo;
+    nodo<c, T, comp>* hijo_derecho;
 
-    nodo(T dato, nodo<T>* anterior, nodo<T>* siguiente);
+    // Constructores.
+    nodo(c clave, T dato);
+
+    nodo(c clave, T dato, nodo<c, T, comp>* padre, nodo<c, T, comp>* hijo_izquierdo, nodo<c, T, comp>* hijo_derecho);
 
     // Esto permite acceder directamente a los atributos del nodo.
-    friend class cola<T>;
-
-    friend class lista_circular<T>;
+    friend class diccionario<c, T, comp>;
 };
 
-template<typename T>
-nodo<T>::nodo(T dato) {
+template<typename c, typename T, bool comp(c, c)>
+nodo<c, T, comp>::nodo(c clave, T dato) {
+    this->clave = clave;
     this->dato = dato;
-    anterior = nullptr;
-    siguiente = nullptr;
+    padre = nullptr;
+    hijo_izquierdo = nullptr;
+    hijo_derecho = nullptr;
 }
 
-template<typename T>
-nodo<T>::nodo(T dato, nodo<T>* anterior, nodo<T>* siguiente) {
+template<typename c, typename T, bool (* comp)(c, c)>
+nodo<c, T, comp>::nodo(c clave, T dato, nodo<c, T, comp>* padre, nodo<c, T, comp>* hijo_izquierdo,
+                       nodo<c, T, comp>* hijo_derecho) {
+    this->clave = clave;
     this->dato = dato;
-    this->anterior = anterior;
-    this->siguiente = siguiente;
+    this->padre = padre;
+    this->hijo_izquierdo = hijo_izquierdo;
+    this->hijo_derecho = hijo_derecho;
 }
 
 #endif

@@ -1,10 +1,29 @@
-# AyED / AYP2 - TP3 1c2024
+# AyED / AYP2 - TPG 1c2024
 
 <p align="center">
-   <img src="Banner.jpg" alt="TP3: Quality of Life"><br>
+   <img src="Banner.jpg" alt="TPG: El bullicio del Callejon Aurum"><br>
 </p>
 
-### Estudiante: APELLIDO, NOMBRE - PADRÓN
+## Nombre del grupo: **NOMBRE**
+
+### Integrantes:
+
+#### APELLIDO, NOMBRE - PADRÓN
+
+#### APELLIDO, NOMBRE - PADRÓN
+
+#### APELLIDO, NOMBRE - PADRÓN
+
+#### APELLIDO, NOMBRE - PADRÓN
+
+#### APELLIDO, NOMBRE - PADRÓN
+
+### Documentos:
+
+1. [Informe de complejidad algorítmica](https://www.enlaceaca.com/)
+2. [Video de demostración del programa](https://www.enlaceaca.com/)
+
+### Compilación
 
 El proyecto se puede compilar manualmente por terminal con la siguiente línea:
 

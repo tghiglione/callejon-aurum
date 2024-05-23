@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(AyED_TP3_1c2024)
+project(AyED_TPG_1c2024)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../")
@@ -11,20 +11,12 @@ include_directories(include)
 # Si crean otros archivos .cpp, los tienen que agregar acá de la forma:
 #   directorio/archivo.cpp
 set(ARCHIVOS_FUENTE
-        include/lista_circular.hpp
+        include/diccionario.hpp
+        include/heap.hpp
         include/nodo.hpp
-        include/cola.hpp
-        src/armamento_artefactos.cpp
-        include/armamento_artefactos.hpp
-        src/combate_multiple.cpp
-        include/combate_multiple.hpp
-        src/artefacto.cpp
-        include/artefacto.hpp
-        src/combate.cpp
-        include/combate.hpp
 )
 
-add_executable(AyED_TP3_1c2024
+add_executable(AyED_TPG_1c2024
         ${ARCHIVOS_FUENTE}
         main.cpp
 )
@@ -43,8 +35,8 @@ FetchContent_MakeAvailable(googletest)
 
 include_directories(${gmock_SOURCE_DIR}/include ${gmock_SOURCE_DIR})
 
-add_subdirectory(tests/cola)
-add_subdirectory(tests/lista_circular)
+add_subdirectory(tests/diccionario)
+add_subdirectory(tests/heap)
 
-target_sources(cola_test PRIVATE ${ARCHIVOS_FUENTE})
-target_sources(lista_circular_test PRIVATE ${ARCHIVOS_FUENTE})
+target_sources(diccionario_test PRIVATE ${ARCHIVOS_FUENTE})
+target_sources(heap_test PRIVATE ${ARCHIVOS_FUENTE})
