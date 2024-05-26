@@ -21,6 +21,16 @@
       "points": 10
     },
     {
+      "name": "Pruebas Grafo",
+      "setup": "./build.sh",
+      "run": "./test_grafo",
+      "input": null,
+      "output": null,
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 5
+    },
+    {
       "name": "Chequeo de Memoria",
       "setup": "sudo apt-get update && sudo apt-get install -y valgrind && ./build.sh",
       "run": "./valgrind.sh",
