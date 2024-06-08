@@ -4,7 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <exception>
-
+#include <random>
 class heap_exception : public std::exception {
 };
 
@@ -26,6 +26,10 @@ private:
     // Post: Realiza un "downheap" sobre el índice indicado.
     // (El dato "baja" en el heap, intercambiándose con el menor/mayor dato.)
     void downheap(size_t& indice);
+
+    // Pre:
+    // Post: Devuelve un numero entre 0 y 100000.
+    int generar_random();
 
     // NOTA: No es necesario que lancen excepciones en estos métodos porque son privados.
     // Deberían siempre asegurar que los índices pasados por parámetros son válidos.
@@ -68,62 +72,128 @@ public:
 
 template<typename T, bool (* comp)(T, T)>
 heap<T, comp>::heap() {
-
 }
 
 template<typename T, bool (* comp)(T, T)>
-void heap<T, comp>::swap(size_t indice_1, size_t indice_2) {
-
+void heap<T, comp>::swap(size_t indice_1, size_t indice_2)
+{
+    std::swap(datos[indice_1], datos[indice_2]);
 }
 
 template<typename T, bool (* comp)(T, T)>
-void heap<T, comp>::upheap(size_t& indice) {
-
+void heap<T, comp>::upheap(size_t& indice)
+{
+    if (indice == 0)
+    {
+        return;
+    }
+    size_t padre = (indice - 1) / 2;
+    if(comp(datos[indice], datos[padre]))
+    {
+        swap(indice, padre);
+        upheap(padre);
+    }
 }
 
 template<typename T, bool (* comp)(T, T)>
-void heap<T, comp>::downheap(size_t& indice) {
-
+void heap<T, comp>::downheap(size_t& indice)
+{
+    size_t hijo_izquierdo = (2 * indice) + 1;
+    size_t hijo_derecho = (2 * indice) + 2;
+    size_t nodo = indice;
+    if (hijo_izquierdo < tamanio() && comp(datos[hijo_izquierdo], datos[indice]))
+    {
+        nodo = hijo_izquierdo;
+    }
+    if (hijo_derecho < tamanio() && comp(datos[hijo_derecho], datos[indice]))
+    {
+        nodo = hijo_derecho;
+    }
+    if (nodo != indice)
+    {
+        swap(nodo, indice);
+        downheap(indice);
+    }
 }
 
 template<typename T, bool (* comp)(T, T)>
-void heap<T, comp>::alta(T dato) {
+int heap<T, comp>::generar_random()
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> dis(0, 100000);
+    return dis(gen);
+}
 
+
+template<typename T, bool (* comp)(T, T)>
+void heap<T, comp>::alta(T dato)
+{
+    datos.push_back(dato);
+    size_t indice = tamanio() - 1;
+    upheap(indice);
 }
 
 template<typename T, bool (* comp)(T, T)>
-T heap<T, comp>::baja() {
+T heap<T, comp>::baja()
+{
+    if (datos.empty())
+    {
+        throw heap_exception();
+    }
 
+    T dato_primero = primero();
+    size_t cero = 0;
+    datos[0] = datos.back();
+    datos.pop_back();
+    if (!vacio())
+    {
+        downheap(cero);
+    }
+    return dato_primero;
 }
 
 template<typename T, bool (* comp)(T, T)>
-size_t heap<T, comp>::alta_complejidad(T dato) {
-
+size_t heap<T, comp>::alta_complejidad(T dato)
+{
+    return 0;
 }
 
 template<typename T, bool (* comp)(T, T)>
-size_t heap<T, comp>::baja_complejidad() {
-
+size_t heap<T, comp>::baja_complejidad()
+{
+    return 0;
 }
 
 template<typename T, bool (* comp)(T, T)>
-T heap<T, comp>::primero() {
+T heap<T, comp>::primero()
+{
+    if (datos.empty())
+    {
+        throw heap_exception();
+    }
 
+    return datos.front();
 }
 
 template<typename T, bool (* comp)(T, T)>
-bool heap<T, comp>::vacio() {
-
+bool heap<T, comp>::vacio()
+{
+    return datos.empty();
 }
 
 template<typename T, bool (* comp)(T, T)>
-size_t heap<T, comp>::tamanio() {
-
+size_t heap<T, comp>::tamanio()
+{
+    return datos.size();
 }
 
 template<typename T, bool (* comp)(T, T)>
 heap<T, comp>::~heap() {
-
+    while (!vacio())
+    {
+        baja();
+    }
 }
 
 #endif
