@@ -55,5 +55,5 @@ add_subdirectory(tests/heap)
 #add_subdirectory(tests/grafo)
 
 target_sources(diccionario_test PRIVATE ${ARCHIVOS_FUENTE})
-#target_sources(heap_test PRIVATE ${ARCHIVOS_FUENTE})
+target_sources(heap_test PRIVATE ${ARCHIVOS_FUENTE})
 #target_sources(grafo_test PRIVATE ${ARCHIVOS_FUENTE})
