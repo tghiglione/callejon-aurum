@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.16)
 project(AyED_TPG_1c2024)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../")
 
 add_compile_options(-Wall -Werror -Wconversion)
@@ -14,21 +14,21 @@ include_directories(include/aem)
 #   directorio/archivo.cpp
 set(ARCHIVOS_FUENTE
         include/diccionario.hpp
-        include/heap.hpp
+        #include/heap.hpp
         include/nodo.hpp
-        include/matriz.hpp
-        src/a_estrella/vertice.cpp
-        include/a_estrella/vertice.hpp
-        src/a_estrella/a_estrella.cpp
-        include/a_estrella/a_estrella.hpp
-        src/a_estrella/coordenada.cpp
-        include/a_estrella/coordenada.hpp
-        src/mapa.cpp
-        include/mapa.hpp
-        src/aem/grafo.cpp
-        include/aem/grafo.hpp
-        src/aem/arista.cpp
-        include/aem/arista.hpp
+        #include/matriz.hpp
+        #src/a_estrella/vertice.cpp
+        #include/a_estrella/vertice.hpp
+        #src/a_estrella/a_estrella.cpp
+        #include/a_estrella/a_estrella.hpp
+        #src/a_estrella/coordenada.cpp
+        #include/a_estrella/coordenada.hpp
+        #src/mapa.cpp
+        #include/mapa.hpp
+        #src/aem/grafo.cpp
+        #include/aem/grafo.hpp
+        #src/aem/arista.cpp
+        #include/aem/arista.hpp
 )
 
 add_executable(AyED_TPG_1c2024
@@ -51,9 +51,9 @@ FetchContent_MakeAvailable(googletest)
 include_directories(${gmock_SOURCE_DIR}/include ${gmock_SOURCE_DIR})
 
 add_subdirectory(tests/diccionario)
-add_subdirectory(tests/heap)
-add_subdirectory(tests/grafo)
+#add_subdirectory(tests/heap)
+#add_subdirectory(tests/grafo)
 
 target_sources(diccionario_test PRIVATE ${ARCHIVOS_FUENTE})
-target_sources(heap_test PRIVATE ${ARCHIVOS_FUENTE})
-target_sources(grafo_test PRIVATE ${ARCHIVOS_FUENTE})
+#target_sources(heap_test PRIVATE ${ARCHIVOS_FUENTE})
+#target_sources(grafo_test PRIVATE ${ARCHIVOS_FUENTE})

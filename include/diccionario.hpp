@@ -1,3 +1,5 @@
+/* Archivo realizado en conjunto por los alumnos Elias Josue Cuba y Mauricio Agustin Laganga. */
+
 #ifndef AYED_TPG_1C2024_DICCIONARIO_HPP
 #define AYED_TPG_1C2024_DICCIONARIO_HPP
 
@@ -6,6 +8,10 @@
 #include <vector>
 #include <queue>
 #include "nodo.hpp"
+
+const int PREORDER = 1;
+const int INORDER = 2;
+const int POSTORDER = 3;
 
 class diccionario_exception : public std::exception {
 };
@@ -17,122 +23,302 @@ private:
     // La clave debe implementar el operator==().
     nodo<c, T, comp>* raiz;
     std::size_t cantidad_datos;
+
+    // Pre: 'nodo' es un puntero que apunta a un nodo del diccionario o nullptr.
+    // 'recorrido' debe ser uno de los valores {PREORDER, INORDER, POSTORDER}.
+    // Post: Retorna un vector con los elementos en el orden de 'recorrido'.
+    std::vector<T> recorridos_recursivos(std::vector<T> lista, nodo<c, T, comp>* nodo, int recorrido);
+
+    // Pre: 'nodo' es un puntero que apunta a un nodo del diccionario o nullptr.
+    // Post: Elimina todos los nodos en el subarbol de 'nodo'.
+    void baja_postorder_recursivo(nodo<c, T, comp>* nodo);
+    
+    // Pre: Nodo no debe ser nulo.
+    // Post: Se aplica la función 'funcion' a cada elemento en orden.
+    void ejecutar_recursivo(nodo<c, T, comp>* nodo, void (*funcion)(T));
+
 public:
-    // Constructor.
+    // constructor
     diccionario();
 
-    // Pre: La clave no puede existir en el árbol.
-    // Post: Agrega el dato asociado a la clave al árbol. Si no hay datos, crea una nueva raíz.
+    // Pre: 'clave' no debe existir ya en el diccionario.
+    // Post: Se agrega el nuevo elemento con la clave y dato proporcionados.
     void alta(c clave, T dato);
 
-    // Pre: -
-    // Post: Elimina el dato asociado a la clave del árbol. Si no existe, no hace nada.
-    // NOTA: El caso de baja con dos hijos se resuelve con sucesor inmediato. Se puede hacer swap del dato.
+    // Pre: 'clave' debe existir en el diccionario.
+    // Post: Se elimina el elemento con la clave proporcionada.
     void baja(c clave);
 
-    // Pre: La clave debe existir en el árbol.
-    // Post: Devuelve una referencia al valor asociado a la clave.
+    // Pre: 'clave' debe existir en el diccionario.
+    // Post: Retorna el dato asociado a la clave proporcionada.
     T& operator[](c clave);
 
     // Pre: -
-    // Post: Devuelve el recorrido inorder.
+    // Post: Retorna un vector con los elementos en orden inorder.
     std::vector<T> inorder();
 
     // Pre: -
-    // Post: Devuelve el recorrido preorder.
+    // Post: Retorna un vector con los elementos en orden preorder.
     std::vector<T> preorder();
 
     // Pre: -
-    // Post: Devuelve el recorrido postorder.
+    // Post: Retorna un vector con los elementos en orden postorder.
     std::vector<T> postorder();
 
     // Pre: -
-    // Post: Devuelve el recorrido en ancho.
+    // Post: Retorna un vector con los elementos en orden de ancho.
     std::vector<T> ancho();
 
     // Pre: -
-    // Post: Ejecuta el método/función en cada valor del árbol.
-    /* NOTA: No abusar de este método, está solamente para simplificar algunas cosas,
-     * como liberar la memoria de los nodos de usar punteros o imprimir por pantalla el contenido.
-     * Pueden usar cualquier recorrido. */
+    // Post: Aplica la función proporcionada a cada elemento del diccionario en orden inorder.
     void ejecutar(void funcion(T));
 
     // Pre: -
-    // Post: Devuelve la cantidad de datos en el árbol.
+    // Post: Retorna el número de elementos en el diccionario.
     std::size_t tamanio();
 
     // Pre: -
-    // Post: Devuelve true si el árbol está vacío.
+    // Post: Retorna true si el diccionario está vacío, false en caso contrario.
     bool vacio();
 
-    // El constructor de copia está deshabilitado.
     diccionario(const diccionario& abb) = delete;
-
-    // El operador = (asignación) está deshabilitado.
     void operator=(const diccionario& abb) = delete;
-
-    // Destructor.
     ~diccionario();
 };
 
 template<typename c, typename T, bool (* comp)(c, c)>
 diccionario<c, T, comp>::diccionario() {
-
+    raiz = nullptr;
+    cantidad_datos = 0;
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 void diccionario<c, T, comp>::alta(c clave, T dato) {
+    nodo<c, T, comp>* actual = raiz;
+    nodo<c, T, comp>* padre = nullptr;
+    bool izquierdo = false;
 
+    while (actual) {
+        padre = actual;
+        if (comp(clave, actual->clave)) {
+            actual = actual->hijo_izquierdo;
+            izquierdo = true;
+        } else if (comp(actual->clave, clave)) {
+            actual = actual->hijo_derecho;
+            izquierdo = false;
+        } else {
+            throw diccionario_exception();
+        }
+    }
+
+    nodo<c, T, comp>* nuevo_nodo = new nodo<c, T, comp>(clave, dato, padre, nullptr, nullptr);
+
+    if (!raiz) {
+        raiz = nuevo_nodo;
+    } else {
+        if (izquierdo) {
+            padre->hijo_izquierdo = nuevo_nodo;
+        } else {
+            padre->hijo_derecho = nuevo_nodo;
+        }
+    }
+    cantidad_datos++;
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 void diccionario<c, T, comp>::baja(c clave) {
+    nodo<c, T, comp>* actual = raiz;
+    nodo<c, T, comp>* padre = nullptr;
+    nodo<c, T, comp>* a_borrar = nullptr;
+    bool izquierdo = false;
 
+    while (actual && !a_borrar) {
+        if (comp(clave, actual->clave)) {
+            padre = actual;
+            actual = actual->hijo_izquierdo;
+            izquierdo = true;
+        } else if (comp(actual->clave, clave)) {
+            padre = actual;
+            actual = actual->hijo_derecho;
+            izquierdo = false;
+        } else {
+            a_borrar = actual;
+        }
+    }
+
+    if (!a_borrar) {
+        return;
+    }
+
+    if (!a_borrar->hijo_izquierdo && !a_borrar->hijo_derecho) {
+        if (!padre) {
+            delete a_borrar;
+            raiz = nullptr;
+        } else {
+            if (izquierdo) {
+                padre->hijo_izquierdo = nullptr;
+            } else {
+                padre->hijo_derecho = nullptr;
+            }
+            delete a_borrar;
+        }
+    } else if (!a_borrar->hijo_izquierdo || !a_borrar->hijo_derecho) {
+        nodo<c, T, comp>* hijo;
+        if (a_borrar->hijo_izquierdo) {
+            hijo = a_borrar->hijo_izquierdo;
+        } else {
+            hijo = a_borrar->hijo_derecho;
+        }
+        if (!padre) {
+            raiz = hijo;
+        } else {
+            if (izquierdo) {
+                padre->hijo_izquierdo = hijo;
+            } else {
+                padre->hijo_derecho = hijo;
+            }
+        }
+        delete a_borrar;
+    } else {
+        nodo<c, T, comp>* sucesor = a_borrar->hijo_derecho;
+        padre = nullptr;
+        while (sucesor->hijo_izquierdo) {
+            padre = sucesor;
+            sucesor = sucesor->hijo_izquierdo;
+        }
+
+        a_borrar->clave = sucesor->clave;
+        a_borrar->dato = sucesor->dato;
+
+        if (!padre) {
+            a_borrar->hijo_derecho = sucesor->hijo_derecho;
+        } else {
+            padre->hijo_izquierdo = sucesor->hijo_derecho;
+        }
+        delete sucesor;
+    }
+    cantidad_datos--;
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 T& diccionario<c, T, comp>::operator[](c clave) {
+    nodo<c, T, comp>* actual = raiz;
 
+    while (actual) {
+        if (comp(clave, actual->clave)) {
+            actual = actual->hijo_izquierdo;
+        } else if (comp(actual->clave, clave)) {
+            actual = actual->hijo_derecho;
+        } else {
+            return actual->dato;
+        }
+    }
+    throw diccionario_exception();
+}
+
+template<typename c, typename T, bool (* comp)(c, c)>
+std::vector<T> diccionario<c, T, comp>::recorridos_recursivos(std::vector<T> lista, nodo<c, T, comp>* nodo, int recorrido) {
+    if (nodo) {
+        switch (recorrido) {
+            case PREORDER:
+                lista.push_back(nodo->dato);
+                lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, PREORDER);
+                lista = recorridos_recursivos(lista, nodo->hijo_derecho, PREORDER);
+                break;
+            case INORDER:
+                lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, INORDER);
+                lista.push_back(nodo->dato);
+                lista = recorridos_recursivos(lista, nodo->hijo_derecho, INORDER);
+                break;
+            case POSTORDER:
+                lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, POSTORDER);
+                lista = recorridos_recursivos(lista, nodo->hijo_derecho, POSTORDER);
+                lista.push_back(nodo->dato);
+                break;
+        }
+    }
+    return lista;
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 std::vector<T> diccionario<c, T, comp>::inorder() {
-
+    std::vector<T> lista_inorder;
+    return recorridos_recursivos(lista_inorder, raiz, INORDER);
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 std::vector<T> diccionario<c, T, comp>::preorder() {
-
+    std::vector<T> lista_preorder;
+    return recorridos_recursivos(lista_preorder, raiz, PREORDER);
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 std::vector<T> diccionario<c, T, comp>::postorder() {
-
+    std::vector<T> lista_postorder;
+    return recorridos_recursivos(lista_postorder, raiz, POSTORDER);
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 std::vector<T> diccionario<c, T, comp>::ancho() {
+    std::vector<T> resultado;
 
+    if (!raiz) {
+        return resultado;
+    }
+
+    std::queue<nodo<c, T, comp>*> cola;
+    cola.push(raiz);
+
+    while (!cola.empty()) {
+        nodo<c, T, comp>* actual = cola.front();
+        cola.pop();
+        resultado.push_back(actual->dato);
+        if (actual->hijo_izquierdo) {
+            cola.push(actual->hijo_izquierdo);
+        }
+        if (actual->hijo_derecho) {
+            cola.push(actual->hijo_derecho);
+        }
+    }
+    return resultado;
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
-void diccionario<c, T, comp>::ejecutar(void (* funcion)(T)) {
+void diccionario<c, T, comp>::ejecutar(void (*funcion)(T)) {
+    ejecutar_recursivo(raiz, funcion);
+}
 
+template<typename c, typename T, bool (* comp)(c, c)>
+void diccionario<c, T, comp>::ejecutar_recursivo(nodo<c, T, comp>* nodo, void (*funcion)(T)) {
+    if (nodo) {
+        ejecutar_recursivo(nodo->hijo_izquierdo, funcion);
+        funcion(nodo->dato);
+        ejecutar_recursivo(nodo->hijo_derecho, funcion);
+    }
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 std::size_t diccionario<c, T, comp>::tamanio() {
-
+    return cantidad_datos;
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 bool diccionario<c, T, comp>::vacio() {
+    return cantidad_datos == 0;
+}
 
+template<typename c, typename T, bool (* comp)(c, c)>
+void diccionario<c, T, comp>::baja_postorder_recursivo(nodo<c, T, comp>* nodo) {
+    if (nodo) {
+        baja_postorder_recursivo(nodo->hijo_izquierdo);
+        baja_postorder_recursivo(nodo->hijo_derecho);
+        diccionario::baja(nodo->clave);
+    }
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
 diccionario<c, T, comp>::~diccionario() {
-
+    baja_postorder_recursivo(raiz);
 }
 
 #endif
