@@ -14,7 +14,7 @@ include_directories(include/aem)
 #   directorio/archivo.cpp
 set(ARCHIVOS_FUENTE
         include/diccionario.hpp
-        #include/heap.hpp
+        include/heap.hpp
         include/nodo.hpp
         #include/matriz.hpp
         #src/a_estrella/vertice.cpp
@@ -51,7 +51,7 @@ FetchContent_MakeAvailable(googletest)
 include_directories(${gmock_SOURCE_DIR}/include ${gmock_SOURCE_DIR})
 
 add_subdirectory(tests/diccionario)
-#add_subdirectory(tests/heap)
+add_subdirectory(tests/heap)
 #add_subdirectory(tests/grafo)
 
 target_sources(diccionario_test PRIVATE ${ARCHIVOS_FUENTE})
