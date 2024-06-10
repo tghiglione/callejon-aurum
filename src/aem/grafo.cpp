@@ -110,6 +110,5 @@ std::vector<arista> grafo::obtener_aem() {
             unir_subconjuntos(origen, destino, padres);
         }
     }
-
     return arbol_expansion_minima;
 }

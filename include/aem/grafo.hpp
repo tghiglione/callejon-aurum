@@ -38,7 +38,7 @@ public:
     // Post: Aisla el vértice. Si no es válido, la matriz no cambia.
     void aislar_vertice(size_t vertice);
 
-    // Constructor de copia.
+    // Constructor de copia..
     grafo(const grafo& grafo1);
 
     // Operador de asignación.
@@ -52,6 +52,7 @@ public:
     static bool comparar_aristas_por_peso(arista& primera_arista, arista& segunda_arista);
     static size_t encontrar_padre(size_t vertice, std::vector<size_t>& padres);
     static void unir_subconjuntos(size_t conjunto_a, size_t conjunto_b, std::vector<size_t>& padres);
+
 
 };
 
