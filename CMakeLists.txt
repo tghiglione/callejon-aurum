@@ -16,7 +16,7 @@ set(ARCHIVOS_FUENTE
         include/diccionario.hpp
         include/heap.hpp
         include/nodo.hpp
-        #include/matriz.hpp
+        include/matriz.hpp
         src/a_estrella/vertice.cpp
         include/a_estrella/vertice.hpp
         #src/a_estrella/a_estrella.cpp
