@@ -46,7 +46,13 @@ public:
 
     // Pre: El grafo representado debe ser conexo y no direccionado (asumirlo).
     // Post: Devuelve el arbol de expansión mínimo/máximo.
-    std::vector<arista> obtener_aem();
+
+    std::vector<arista> obtener_aem() ;
+    std::vector<arista> obtener_todas_las_aristas(matriz<int>& matriz_adyacencia) ;
+    static bool comparar_aristas_por_peso(arista& primera_arista, arista& segunda_arista);
+    static size_t encontrar_padre(size_t vertice, std::vector<size_t>& padres);
+    static void unir_subconjuntos(size_t conjunto_a, size_t conjunto_b, std::vector<size_t>& padres);
+
 };
 
 #endif

@@ -1,5 +1,9 @@
 #include <iostream>
 #include "grafo.hpp"
+#include <vector>
+#include "matriz.hpp"
+#include "arista.hpp"
+#include <algorithm>
 
 grafo::grafo(size_t cantidad_vertices) {
     matriz_adyacencia = matriz(cantidad_vertices, INFINITO);
@@ -55,6 +59,57 @@ grafo& grafo::operator=(const grafo& grafo1) {
     return *this;
 }
 
+
+std::vector<arista> grafo::obtener_todas_las_aristas(matriz<int>& matriz_adyacencia)  {
+    std::vector<arista> todas_las_aristas;
+    for (size_t origen = 0; origen < matriz_adyacencia.filas(); ++origen) {
+        for (size_t destino = origen + 1; destino < matriz_adyacencia.columnas(); ++destino) {
+            if (matriz_adyacencia.elemento(origen, destino) != INFINITO) {
+                todas_las_aristas.push_back({{origen, destino}, matriz_adyacencia.elemento(origen, destino)});
+            }
+        }
+    }
+    return todas_las_aristas;
+}
+
+bool grafo::comparar_aristas_por_peso( arista& primera_arista,  arista& segunda_arista) {
+    return primera_arista.obtener_peso() > segunda_arista.obtener_peso();
+}
+
+size_t grafo::encontrar_padre(size_t vertice, std::vector<size_t>& padres) {
+    while (padres[vertice] != vertice) {
+        padres[vertice] = padres[padres[vertice]]; 
+        vertice = padres[vertice];
+    }
+    return vertice;
+}
+
+void grafo::unir_subconjuntos(size_t conjunto_a, size_t conjunto_b, std::vector<size_t>& padres) {
+    auto padre_conjunto_a = encontrar_padre(conjunto_a, padres);
+    auto padre_conjunto_b = encontrar_padre(conjunto_b, padres);
+    padres[padre_conjunto_a] = padre_conjunto_b;
+}
+
 std::vector<arista> grafo::obtener_aem() {
-    //TODO: Implementar.
+    std::vector<arista> arbol_expansion_minima;
+
+    auto todas_las_aristas = obtener_todas_las_aristas(matriz_adyacencia);
+    std::sort(todas_las_aristas.begin(), todas_las_aristas.end(), comparar_aristas_por_peso);
+
+    std::vector<size_t> padres(matriz_adyacencia.filas());
+    for (size_t vertice = 0; vertice < padres.size(); ++vertice) {
+        padres[vertice] = vertice;
+    }
+
+    for ( auto& arista : todas_las_aristas) {
+        auto origen = arista.obtener_vertices().first;
+        auto destino = arista.obtener_vertices().second;
+
+        if (encontrar_padre(origen, padres) != encontrar_padre(destino, padres)) {
+            arbol_expansion_minima.push_back(arista);
+            unir_subconjuntos(origen, destino, padres);
+        }
+    }
+
+    return arbol_expansion_minima;
 }
