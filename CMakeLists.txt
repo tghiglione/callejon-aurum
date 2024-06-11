@@ -23,8 +23,8 @@ set(ARCHIVOS_FUENTE
         include/a_estrella/a_estrella.hpp
         src/a_estrella/coordenada.cpp
         include/a_estrella/coordenada.hpp
-        #src/mapa.cpp
-        #include/mapa.hpp
+        src/mapa.cpp
+        include/mapa.hpp
         src/aem/grafo.cpp
         include/aem/grafo.hpp
         src/aem/arista.cpp
