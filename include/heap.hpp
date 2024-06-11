@@ -5,6 +5,10 @@
 #include <cstdlib>
 #include <exception>
 #include <random>
+
+const int CANTIDAD_EXPERIMENTOS = 100;
+const std::vector<int> TAMANIOS_HEAP = {100, 1000, 10000};
+
 class heap_exception : public std::exception {
 };
 
@@ -31,6 +35,9 @@ private:
     // Post: Devuelve un numero entre 0 y 100000.
     int generar_random();
 
+    unsigned long contador_downheap;
+    unsigned long contador_upheap;
+
     // NOTA: No es necesario que lancen excepciones en estos métodos porque son privados.
     // Deberían siempre asegurar que los índices pasados por parámetros son válidos.
     // Consideren cada caso con detenimiento.
@@ -53,6 +60,9 @@ public:
 
     // Método para el informe de complejidad algorítmica. Devuelve la cantidad de "downheaps".
     size_t baja_complejidad();
+
+    // // Método para el informe de complejidad algorítmica. Imprime los promedios solicitados".
+    void informar_complejidad();
 
     // Pre: El heap no puede estar vacío.
     // Post: Devuelve el primer dato.
@@ -91,6 +101,7 @@ void heap<T, comp>::upheap(size_t& indice)
     if(comp(datos[indice], datos[padre]))
     {
         swap(indice, padre);
+        contador_upheap++;
         upheap(padre);
     }
 }
@@ -112,6 +123,7 @@ void heap<T, comp>::downheap(size_t& indice)
     if (nodo != indice)
     {
         swap(nodo, indice);
+        contador_downheap++;
         downheap(indice);
     }
 }
@@ -156,13 +168,47 @@ T heap<T, comp>::baja()
 template<typename T, bool (* comp)(T, T)>
 size_t heap<T, comp>::alta_complejidad(T dato)
 {
-    return 0;
+    contador_upheap = 0;
+    alta(dato);
+    return static_cast<size_t>(contador_upheap);
 }
 
 template<typename T, bool (* comp)(T, T)>
 size_t heap<T, comp>::baja_complejidad()
 {
-    return 0;
+    contador_downheap = 0;
+    baja();
+    return static_cast<size_t>(contador_downheap);
+}
+
+template<typename T, bool (*comp)(T, T)>
+void heap<T, comp>::informar_complejidad()
+{
+    for (int tamanio : TAMANIOS_HEAP) {
+        size_t total_upheaps = 0;
+        size_t total_downheaps = 0;
+
+        for (int i = 0; i < CANTIDAD_EXPERIMENTOS; i++)
+        {
+            heap<int, comp> heap_informe;
+
+            for (int j = 0; j < tamanio; j++)
+            {
+                heap_informe.alta(generar_random());
+            }
+
+            total_upheaps += heap_informe.alta_complejidad(generar_random());
+            total_downheaps += heap_informe.baja_complejidad();
+        }
+
+        double promedio_upheaps = static_cast<double>(total_upheaps) / CANTIDAD_EXPERIMENTOS;
+        double promedio_downheaps = static_cast<double>(total_downheaps) / CANTIDAD_EXPERIMENTOS;
+
+        std::cout << "Tamaño del heap: " << tamanio << std::endl;
+        std::cout << "Promedio de upheap en " << CANTIDAD_EXPERIMENTOS << " altas: " << promedio_upheaps << std::endl;
+        std::cout << "Promedio de downheap en " << CANTIDAD_EXPERIMENTOS << " bajas: " << promedio_downheaps << std::endl;
+        std::cout << std::endl;
+    }
 }
 
 template<typename T, bool (* comp)(T, T)>
