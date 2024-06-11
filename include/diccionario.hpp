@@ -9,9 +9,14 @@
 #include <queue>
 #include "nodo.hpp"
 
-const int PREORDER = 1;
-const int INORDER = 2;
-const int POSTORDER = 3;
+const int RAIZ = 0;
+const int NODO_IZQUIERDO = 1;
+const int NODO_DERECHO = 2;
+
+const std::vector<int> PREORDER = {RAIZ, NODO_IZQUIERDO, NODO_DERECHO};
+const std::vector<int> INORDER = {NODO_IZQUIERDO, RAIZ, NODO_DERECHO};
+const std::vector<int> POSTORDER = {NODO_IZQUIERDO, NODO_DERECHO, RAIZ};
+
 
 class diccionario_exception : public std::exception {
 };
@@ -25,9 +30,9 @@ private:
     std::size_t cantidad_datos;
 
     // Pre: 'nodo' es un puntero que apunta a un nodo del diccionario o nullptr.
-    // 'recorrido' debe ser uno de los valores {PREORDER, INORDER, POSTORDER}.
+    // 'recorrido' es un vector que expresa el orden en que deben añadirse los elementos.
     // Post: Retorna un vector con los elementos en el orden de 'recorrido'.
-    std::vector<T> recorridos_recursivos(std::vector<T> lista, nodo<c, T, comp>* nodo, int recorrido);
+    std::vector<T> recorridos_recursivos(std::vector<T> lista, nodo<c, T, comp>* nodo, std::vector<int> recorrido);
 
     // Pre: 'nodo' es un puntero que apunta a un nodo del diccionario o nullptr.
     // Post: Elimina todos los nodos en el subarbol de 'nodo'.
@@ -217,24 +222,19 @@ T& diccionario<c, T, comp>::operator[](c clave) {
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
-std::vector<T> diccionario<c, T, comp>::recorridos_recursivos(std::vector<T> lista, nodo<c, T, comp>* nodo, int recorrido) {
+std::vector<T> diccionario<c, T, comp>::recorridos_recursivos(std::vector<T> lista, nodo<c, T, comp>* nodo, std::vector<int> recorrido) {
     if (nodo) {
-        switch (recorrido) {
-            case PREORDER:
-                lista.push_back(nodo->dato);
-                lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, PREORDER);
-                lista = recorridos_recursivos(lista, nodo->hijo_derecho, PREORDER);
-                break;
-            case INORDER:
-                lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, INORDER);
-                lista.push_back(nodo->dato);
-                lista = recorridos_recursivos(lista, nodo->hijo_derecho, INORDER);
-                break;
-            case POSTORDER:
-                lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, POSTORDER);
-                lista = recorridos_recursivos(lista, nodo->hijo_derecho, POSTORDER);
-                lista.push_back(nodo->dato);
-                break;
+        for (size_t i = 0; i < 3; i++) {
+            switch (recorrido[i]) {
+                case RAIZ:
+                    lista.push_back(nodo->dato); break;
+
+                case NODO_IZQUIERDO:
+                    lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, recorrido); break;
+
+                case NODO_DERECHO:
+                    lista = recorridos_recursivos(lista, nodo->hijo_derecho, recorrido); break;
+            }
         }
     }
     return lista;
