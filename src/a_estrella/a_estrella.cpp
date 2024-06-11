@@ -50,12 +50,12 @@ void a_estrella::verificar_vecinos(vertice *actual, vertice *fin, mapa &mapa_cal
             int nuevo_costo = actual->costo_origen + 1;
             vertice* vecino = buscar_vertice(set_abierto, vecino_pos); //busco al vecino en el conjunto abierto
 
-            if (vecino == nullptr) {
+            if (vecino == nullptr) {                                        //si no esta, lo agrego
                 vecino = new vertice(vecino_pos, actual);
                 vecino->costo_origen = nuevo_costo;
                 vecino->distancia_destino = heuristica(vecino, fin);
                 set_abierto.push_back(vecino);
-            } else if (nuevo_costo < vecino->costo_origen) {
+            } else if (nuevo_costo < vecino->costo_origen) {            //si esta
                 vecino->padre = actual;
                 vecino->costo_origen = nuevo_costo;
                 vecino->distancia_destino = heuristica(vecino, fin);
