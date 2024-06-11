@@ -1,5 +1,0 @@
-if(EXISTS "/home/pili/Desktop/tpg-1c2024-stars/build/tests/grafo/grafo_test[1]_tests.cmake")
-  include("/home/pili/Desktop/tpg-1c2024-stars/build/tests/grafo/grafo_test[1]_tests.cmake")
-else()
-  add_test(grafo_test_NOT_BUILT grafo_test_NOT_BUILT)
-endif()

@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o -o ../main 
