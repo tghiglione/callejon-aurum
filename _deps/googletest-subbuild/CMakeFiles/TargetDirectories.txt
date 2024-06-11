@@ -1,0 +1,3 @@
+/mnt/c/Users/Elias/OneDrive/Documentos/algoritmos-y-programacion-2/repositorios/tpg-1c2024-stars/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+/mnt/c/Users/Elias/OneDrive/Documentos/algoritmos-y-programacion-2/repositorios/tpg-1c2024-stars/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Elias/OneDrive/Documentos/algoritmos-y-programacion-2/repositorios/tpg-1c2024-stars/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir

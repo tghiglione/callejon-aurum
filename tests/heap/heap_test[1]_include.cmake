@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/c/Users/Elias/OneDrive/Documentos/algoritmos-y-programacion-2/repositorios/tpg-1c2024-stars/tests/heap/heap_test[1]_tests.cmake")
+  include("/mnt/c/Users/Elias/OneDrive/Documentos/algoritmos-y-programacion-2/repositorios/tpg-1c2024-stars/tests/heap/heap_test[1]_tests.cmake")
+else()
+  add_test(heap_test_NOT_BUILT heap_test_NOT_BUILT)
+endif()
