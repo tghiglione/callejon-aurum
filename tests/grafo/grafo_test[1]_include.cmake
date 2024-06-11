@@ -1,5 +1,0 @@
-if(EXISTS "/mnt/c/Users/Elias/OneDrive/Documentos/algoritmos-y-programacion-2/repositorios/tpg-1c2024-stars/tests/grafo/grafo_test[1]_tests.cmake")
-  include("/mnt/c/Users/Elias/OneDrive/Documentos/algoritmos-y-programacion-2/repositorios/tpg-1c2024-stars/tests/grafo/grafo_test[1]_tests.cmake")
-else()
-  add_test(grafo_test_NOT_BUILT grafo_test_NOT_BUILT)
-endif()

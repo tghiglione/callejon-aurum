@@ -1,0 +1,122 @@
+[
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -g -Wall -Werror -Wconversion -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -g -Wall -Werror -Wconversion -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -g -Wall -Werror -Wconversion -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -g -Wall -Werror -Wconversion -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -g -Wall -Werror -Wconversion -o CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/main.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/main.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Werror -Wconversion -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Werror -Wconversion -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Werror -Wconversion -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Werror -Wconversion -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/diccionario",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/diccionario_test.dir/diccionario_test.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/tests/diccionario/diccionario_test.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/tests/diccionario/diccionario_test.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/diccionario",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/vertice.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/diccionario",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/coordenada.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/diccionario",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/diccionario_test.dir/__/__/src/aem/grafo.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/diccionario",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/diccionario_test.dir/__/__/src/aem/arista.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/heap",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/heap_test.dir/heap_test.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/tests/heap/heap_test.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/tests/heap/heap_test.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/heap",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/heap_test.dir/__/__/src/a_estrella/vertice.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/heap",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/heap_test.dir/__/__/src/a_estrella/coordenada.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/heap",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/heap_test.dir/__/__/src/aem/grafo.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/heap",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/heap_test.dir/__/__/src/aem/arista.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/grafo",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/grafo_test.dir/grafo_test.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/tests/grafo/grafo_test.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/tests/grafo/grafo_test.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/grafo",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/grafo_test.dir/__/__/src/a_estrella/vertice.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/grafo",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/grafo_test.dir/__/__/src/a_estrella/coordenada.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/grafo",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/grafo_test.dir/__/__/src/aem/grafo.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp"
+},
+{
+  "directory": "/home/pili/Desktop/tpg-1c2024-stars/build/tests/grafo",
+  "command": "/usr/bin/c++  -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest -g -Wall -Werror -Wconversion -o CMakeFiles/grafo_test.dir/__/__/src/aem/arista.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp",
+  "file": "/home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp"
+}
+]
