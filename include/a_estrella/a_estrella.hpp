@@ -8,22 +8,18 @@
 
 class a_estrella {
 private:
-    std::vector<vertice *> set_abierto;
-    std::vector<vertice *> set_cerrado;
-    std::vector<coordenada> direcciones = {{0,  1},
-                                           {1,  0},
-                                           {0,  -1},
-                                           {-1, 0}}; //posibles movimientos (no puedo en diagonal)
+    std::vector<vertice*> set_abierto;
+    std::vector<vertice*> set_cerrado;
 
     // Pre: -
     // Post: Devuelve el vértice con menor distancia al destino, quitándolo del set abierto.
     // Si el set abierto está vacío, devuelve nullptr.
-    vertice *buscar_mejor_vertice();
+    vertice* buscar_mejor_vertice();
 
     // Pre: -
     // Post: Busca y devuelve, de existir, el vértice con la posición indicada.
     // Si no existe (o el set está vacío), devuelve nullptr.
-    vertice *buscar_vertice(std::vector<vertice *> set, coordenada posicion);
+    vertice* buscar_vertice(std::vector<vertice*> set, coordenada posicion);
 
     // Pre: -
     // Post: Limpia los sets, liberando la memoria reservada para los vértices.
@@ -33,9 +29,7 @@ private:
     // Pre: Se debe haber encontrado el vértice destino
     // (es decir, destino está correctamente conectado con los vértices desde el origen).
     // Post: Devuelve el camino encontrado desde el origen hasta el destino.
-    std::stack<coordenada> reconstruir_camino(vertice *destino);
-
-    void verificar_vecinos(vertice* actual, vertice* fin, mapa& mapa_callejon, int heuristica(vertice*, vertice*));
+    std::stack<coordenada> reconstruir_camino(vertice* destino);
 
 public:
     // Pre: -
@@ -43,9 +37,8 @@ public:
     // De no haber camino, devuelve un camino vacío.
     // NOTA: Si manejan bien desde mapa la validez de un vecino, origen y destino podrían ser coordenadas no válidas.
     // Sin embargo, probablemente les convenga revisar de antemano si tiene sentido la búsqueda.
-    std::stack<coordenada> obtener_camino_minimo(coordenada origen, coordenada destino, mapa &mapa_callejon, int heuristica(vertice *, vertice *));
-
-    static int heuristica_manhattan(vertice *a, vertice *b);
-    //static int heuristica_euclidiana(vertice *a, vertice *b); prueba con otra heuristica
+    std::stack<coordenada> obtener_camino_minimo(coordenada origen, coordenada destino, mapa& mapa_callejon,
+                                                 int heuristica(vertice*, vertice*));
 };
+
 #endif

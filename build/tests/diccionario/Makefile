@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars"
+CMAKE_SOURCE_DIR = /home/pili/Desktop/tpg-1c2024-stars
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build"
+CMAKE_BINARY_DIR = /home/pili/Desktop/tpg-1c2024-stars/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/tests/diccionario//CMakeFiles/progress.marks"
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" 0
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles /home/pili/Desktop/tpg-1c2024-stars/build/tests/diccionario//CMakeFiles/progress.marks
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/clean
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/preinstall
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/preinstall
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/diccionario/CMakeFiles/diccionario_test.dir/rule:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/CMakeFiles/diccionario_test.dir/rule
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/diccionario/CMakeFiles/diccionario_test.dir/rule
 .PHONY : tests/diccionario/CMakeFiles/diccionario_test.dir/rule
 
 # Convenience name for target.
@@ -172,39 +172,15 @@ diccionario_test: tests/diccionario/CMakeFiles/diccionario_test.dir/rule
 
 # fast build rule for target.
 diccionario_test/fast:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/build
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/build
 .PHONY : diccionario_test/fast
-
-__/__/src/a_estrella/a_estrella.o: __/__/src/a_estrella/a_estrella.cpp.o
-.PHONY : __/__/src/a_estrella/a_estrella.o
-
-# target to build an object file
-__/__/src/a_estrella/a_estrella.cpp.o:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/a_estrella.cpp.o
-.PHONY : __/__/src/a_estrella/a_estrella.cpp.o
-
-__/__/src/a_estrella/a_estrella.i: __/__/src/a_estrella/a_estrella.cpp.i
-.PHONY : __/__/src/a_estrella/a_estrella.i
-
-# target to preprocess a source file
-__/__/src/a_estrella/a_estrella.cpp.i:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/a_estrella.cpp.i
-.PHONY : __/__/src/a_estrella/a_estrella.cpp.i
-
-__/__/src/a_estrella/a_estrella.s: __/__/src/a_estrella/a_estrella.cpp.s
-.PHONY : __/__/src/a_estrella/a_estrella.s
-
-# target to generate assembly for a file
-__/__/src/a_estrella/a_estrella.cpp.s:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/a_estrella.cpp.s
-.PHONY : __/__/src/a_estrella/a_estrella.cpp.s
 
 __/__/src/a_estrella/coordenada.o: __/__/src/a_estrella/coordenada.cpp.o
 .PHONY : __/__/src/a_estrella/coordenada.o
 
 # target to build an object file
 __/__/src/a_estrella/coordenada.cpp.o:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/coordenada.cpp.o
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/coordenada.cpp.o
 .PHONY : __/__/src/a_estrella/coordenada.cpp.o
 
 __/__/src/a_estrella/coordenada.i: __/__/src/a_estrella/coordenada.cpp.i
@@ -212,7 +188,7 @@ __/__/src/a_estrella/coordenada.i: __/__/src/a_estrella/coordenada.cpp.i
 
 # target to preprocess a source file
 __/__/src/a_estrella/coordenada.cpp.i:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/coordenada.cpp.i
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/coordenada.cpp.i
 .PHONY : __/__/src/a_estrella/coordenada.cpp.i
 
 __/__/src/a_estrella/coordenada.s: __/__/src/a_estrella/coordenada.cpp.s
@@ -220,7 +196,7 @@ __/__/src/a_estrella/coordenada.s: __/__/src/a_estrella/coordenada.cpp.s
 
 # target to generate assembly for a file
 __/__/src/a_estrella/coordenada.cpp.s:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/coordenada.cpp.s
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/coordenada.cpp.s
 .PHONY : __/__/src/a_estrella/coordenada.cpp.s
 
 __/__/src/a_estrella/vertice.o: __/__/src/a_estrella/vertice.cpp.o
@@ -228,7 +204,7 @@ __/__/src/a_estrella/vertice.o: __/__/src/a_estrella/vertice.cpp.o
 
 # target to build an object file
 __/__/src/a_estrella/vertice.cpp.o:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/vertice.cpp.o
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/vertice.cpp.o
 .PHONY : __/__/src/a_estrella/vertice.cpp.o
 
 __/__/src/a_estrella/vertice.i: __/__/src/a_estrella/vertice.cpp.i
@@ -236,7 +212,7 @@ __/__/src/a_estrella/vertice.i: __/__/src/a_estrella/vertice.cpp.i
 
 # target to preprocess a source file
 __/__/src/a_estrella/vertice.cpp.i:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/vertice.cpp.i
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/vertice.cpp.i
 .PHONY : __/__/src/a_estrella/vertice.cpp.i
 
 __/__/src/a_estrella/vertice.s: __/__/src/a_estrella/vertice.cpp.s
@@ -244,7 +220,7 @@ __/__/src/a_estrella/vertice.s: __/__/src/a_estrella/vertice.cpp.s
 
 # target to generate assembly for a file
 __/__/src/a_estrella/vertice.cpp.s:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/vertice.cpp.s
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/a_estrella/vertice.cpp.s
 .PHONY : __/__/src/a_estrella/vertice.cpp.s
 
 __/__/src/aem/arista.o: __/__/src/aem/arista.cpp.o
@@ -252,7 +228,7 @@ __/__/src/aem/arista.o: __/__/src/aem/arista.cpp.o
 
 # target to build an object file
 __/__/src/aem/arista.cpp.o:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/arista.cpp.o
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/arista.cpp.o
 .PHONY : __/__/src/aem/arista.cpp.o
 
 __/__/src/aem/arista.i: __/__/src/aem/arista.cpp.i
@@ -260,7 +236,7 @@ __/__/src/aem/arista.i: __/__/src/aem/arista.cpp.i
 
 # target to preprocess a source file
 __/__/src/aem/arista.cpp.i:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/arista.cpp.i
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/arista.cpp.i
 .PHONY : __/__/src/aem/arista.cpp.i
 
 __/__/src/aem/arista.s: __/__/src/aem/arista.cpp.s
@@ -268,7 +244,7 @@ __/__/src/aem/arista.s: __/__/src/aem/arista.cpp.s
 
 # target to generate assembly for a file
 __/__/src/aem/arista.cpp.s:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/arista.cpp.s
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/arista.cpp.s
 .PHONY : __/__/src/aem/arista.cpp.s
 
 __/__/src/aem/grafo.o: __/__/src/aem/grafo.cpp.o
@@ -276,7 +252,7 @@ __/__/src/aem/grafo.o: __/__/src/aem/grafo.cpp.o
 
 # target to build an object file
 __/__/src/aem/grafo.cpp.o:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/grafo.cpp.o
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/grafo.cpp.o
 .PHONY : __/__/src/aem/grafo.cpp.o
 
 __/__/src/aem/grafo.i: __/__/src/aem/grafo.cpp.i
@@ -284,7 +260,7 @@ __/__/src/aem/grafo.i: __/__/src/aem/grafo.cpp.i
 
 # target to preprocess a source file
 __/__/src/aem/grafo.cpp.i:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/grafo.cpp.i
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/grafo.cpp.i
 .PHONY : __/__/src/aem/grafo.cpp.i
 
 __/__/src/aem/grafo.s: __/__/src/aem/grafo.cpp.s
@@ -292,39 +268,15 @@ __/__/src/aem/grafo.s: __/__/src/aem/grafo.cpp.s
 
 # target to generate assembly for a file
 __/__/src/aem/grafo.cpp.s:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/grafo.cpp.s
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/aem/grafo.cpp.s
 .PHONY : __/__/src/aem/grafo.cpp.s
-
-__/__/src/mapa.o: __/__/src/mapa.cpp.o
-.PHONY : __/__/src/mapa.o
-
-# target to build an object file
-__/__/src/mapa.cpp.o:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/mapa.cpp.o
-.PHONY : __/__/src/mapa.cpp.o
-
-__/__/src/mapa.i: __/__/src/mapa.cpp.i
-.PHONY : __/__/src/mapa.i
-
-# target to preprocess a source file
-__/__/src/mapa.cpp.i:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/mapa.cpp.i
-.PHONY : __/__/src/mapa.cpp.i
-
-__/__/src/mapa.s: __/__/src/mapa.cpp.s
-.PHONY : __/__/src/mapa.s
-
-# target to generate assembly for a file
-__/__/src/mapa.cpp.s:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/__/__/src/mapa.cpp.s
-.PHONY : __/__/src/mapa.cpp.s
 
 diccionario_test.o: diccionario_test.cpp.o
 .PHONY : diccionario_test.o
 
 # target to build an object file
 diccionario_test.cpp.o:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/diccionario_test.cpp.o
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/diccionario_test.cpp.o
 .PHONY : diccionario_test.cpp.o
 
 diccionario_test.i: diccionario_test.cpp.i
@@ -332,7 +284,7 @@ diccionario_test.i: diccionario_test.cpp.i
 
 # target to preprocess a source file
 diccionario_test.cpp.i:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/diccionario_test.cpp.i
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/diccionario_test.cpp.i
 .PHONY : diccionario_test.cpp.i
 
 diccionario_test.s: diccionario_test.cpp.s
@@ -340,7 +292,7 @@ diccionario_test.s: diccionario_test.cpp.s
 
 # target to generate assembly for a file
 diccionario_test.cpp.s:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/diccionario_test.cpp.s
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(MAKE) $(MAKESILENT) -f tests/diccionario/CMakeFiles/diccionario_test.dir/build.make tests/diccionario/CMakeFiles/diccionario_test.dir/diccionario_test.cpp.s
 .PHONY : diccionario_test.cpp.s
 
 # Help Target
@@ -356,9 +308,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... diccionario_test"
-	@echo "... __/__/src/a_estrella/a_estrella.o"
-	@echo "... __/__/src/a_estrella/a_estrella.i"
-	@echo "... __/__/src/a_estrella/a_estrella.s"
 	@echo "... __/__/src/a_estrella/coordenada.o"
 	@echo "... __/__/src/a_estrella/coordenada.i"
 	@echo "... __/__/src/a_estrella/coordenada.s"
@@ -371,9 +320,6 @@ help:
 	@echo "... __/__/src/aem/grafo.o"
 	@echo "... __/__/src/aem/grafo.i"
 	@echo "... __/__/src/aem/grafo.s"
-	@echo "... __/__/src/mapa.o"
-	@echo "... __/__/src/mapa.i"
-	@echo "... __/__/src/mapa.s"
 	@echo "... diccionario_test.o"
 	@echo "... diccionario_test.i"
 	@echo "... diccionario_test.s"
@@ -388,6 +334,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

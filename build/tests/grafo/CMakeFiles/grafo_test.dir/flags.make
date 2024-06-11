@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/include" -I"/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/include/a_estrella" -I"/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/include/aem" -I"/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include" -I"/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-src/googlemock" -isystem "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include" -isystem "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-src/googletest"
+CXX_INCLUDES = -I/home/pili/Desktop/tpg-1c2024-stars/include -I/home/pili/Desktop/tpg-1c2024-stars/include/a_estrella -I/home/pili/Desktop/tpg-1c2024-stars/include/aem -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/include -I/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest/include -isystem /home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googletest
 
-CXX_FLAGS = -Wall -Werror -Wconversion
+CXX_FLAGS = -g -Wall -Werror -Wconversion
 

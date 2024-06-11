@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "../heap_test"
   "../heap_test.pdb"
-  "CMakeFiles/heap_test.dir/__/__/src/a_estrella/a_estrella.cpp.o"
-  "CMakeFiles/heap_test.dir/__/__/src/a_estrella/a_estrella.cpp.o.d"
   "CMakeFiles/heap_test.dir/__/__/src/a_estrella/coordenada.cpp.o"
   "CMakeFiles/heap_test.dir/__/__/src/a_estrella/coordenada.cpp.o.d"
   "CMakeFiles/heap_test.dir/__/__/src/a_estrella/vertice.cpp.o"
@@ -11,8 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/heap_test.dir/__/__/src/aem/arista.cpp.o.d"
   "CMakeFiles/heap_test.dir/__/__/src/aem/grafo.cpp.o"
   "CMakeFiles/heap_test.dir/__/__/src/aem/grafo.cpp.o.d"
-  "CMakeFiles/heap_test.dir/__/__/src/mapa.cpp.o"
-  "CMakeFiles/heap_test.dir/__/__/src/mapa.cpp.o.d"
   "CMakeFiles/heap_test.dir/heap_test.cpp.o"
   "CMakeFiles/heap_test.dir/heap_test.cpp.o.d"
   "heap_test[1]_tests.cmake"

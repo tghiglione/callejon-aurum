@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars"
+CMAKE_SOURCE_DIR = /home/pili/Desktop/tpg-1c2024-stars
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build"
+CMAKE_BINARY_DIR = /home/pili/Desktop/tpg-1c2024-stars/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles /home/pili/Desktop/tpg-1c2024-stars/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -289,30 +289,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/a_estrella/a_estrella.o: src/a_estrella/a_estrella.cpp.o
-.PHONY : src/a_estrella/a_estrella.o
-
-# target to build an object file
-src/a_estrella/a_estrella.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o
-.PHONY : src/a_estrella/a_estrella.cpp.o
-
-src/a_estrella/a_estrella.i: src/a_estrella/a_estrella.cpp.i
-.PHONY : src/a_estrella/a_estrella.i
-
-# target to preprocess a source file
-src/a_estrella/a_estrella.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.i
-.PHONY : src/a_estrella/a_estrella.cpp.i
-
-src/a_estrella/a_estrella.s: src/a_estrella/a_estrella.cpp.s
-.PHONY : src/a_estrella/a_estrella.s
-
-# target to generate assembly for a file
-src/a_estrella/a_estrella.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.s
-.PHONY : src/a_estrella/a_estrella.cpp.s
-
 src/a_estrella/coordenada.o: src/a_estrella/coordenada.cpp.o
 .PHONY : src/a_estrella/coordenada.o
 
@@ -409,30 +385,6 @@ src/aem/grafo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.s
 .PHONY : src/aem/grafo.cpp.s
 
-src/mapa.o: src/mapa.cpp.o
-.PHONY : src/mapa.o
-
-# target to build an object file
-src/mapa.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o
-.PHONY : src/mapa.cpp.o
-
-src/mapa.i: src/mapa.cpp.i
-.PHONY : src/mapa.i
-
-# target to preprocess a source file
-src/mapa.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.i
-.PHONY : src/mapa.cpp.i
-
-src/mapa.s: src/mapa.cpp.s
-.PHONY : src/mapa.s
-
-# target to generate assembly for a file
-src/mapa.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AyED_TPG_1c2024.dir/build.make CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.s
-.PHONY : src/mapa.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -456,9 +408,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/a_estrella/a_estrella.o"
-	@echo "... src/a_estrella/a_estrella.i"
-	@echo "... src/a_estrella/a_estrella.s"
 	@echo "... src/a_estrella/coordenada.o"
 	@echo "... src/a_estrella/coordenada.i"
 	@echo "... src/a_estrella/coordenada.s"
@@ -471,9 +420,6 @@ help:
 	@echo "... src/aem/grafo.o"
 	@echo "... src/aem/grafo.i"
 	@echo "... src/aem/grafo.s"
-	@echo "... src/mapa.o"
-	@echo "... src/mapa.i"
-	@echo "... src/mapa.s"
 .PHONY : help
 
 

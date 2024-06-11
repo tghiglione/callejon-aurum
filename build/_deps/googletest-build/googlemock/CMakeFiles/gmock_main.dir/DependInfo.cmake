@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/src/gmock_main.cc" "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" "gcc" "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d"
+  "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src/googlemock/src/gmock_main.cc" "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" "gcc" "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
-  "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

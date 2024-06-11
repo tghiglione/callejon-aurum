@@ -22,8 +22,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(googletest-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/google/googletest.git" "GIT_TAG" "e4fdb87e76b9fc4b01c54ad81aea19d6e994b994"
-                    SOURCE_DIR          "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-src"
-                    BINARY_DIR          "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/_deps/googletest-build"
+                    SOURCE_DIR          "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-src"
+                    BINARY_DIR          "/home/pili/Desktop/tpg-1c2024-stars/build/_deps/googletest-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

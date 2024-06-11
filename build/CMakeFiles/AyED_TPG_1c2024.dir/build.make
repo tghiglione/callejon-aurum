@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars"
+CMAKE_SOURCE_DIR = /home/pili/Desktop/tpg-1c2024-stars
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build"
+CMAKE_BINARY_DIR = /home/pili/Desktop/tpg-1c2024-stars/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/AyED_TPG_1c2024.dir/depend.make
@@ -72,107 +72,77 @@ include CMakeFiles/AyED_TPG_1c2024.dir/flags.make
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/flags.make
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o: ../src/a_estrella/vertice.cpp
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o -c "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/vertice.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/vertice.cpp" > CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp > CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.i
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/vertice.cpp" -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.s
-
-CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/flags.make
-CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o: ../src/a_estrella/a_estrella.cpp
-CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o -c "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/a_estrella.cpp"
-
-CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/a_estrella.cpp" > CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.i
-
-CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/a_estrella.cpp" -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/vertice.cpp -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.s
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/flags.make
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o: ../src/a_estrella/coordenada.cpp
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o -c "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/coordenada.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/coordenada.cpp" > CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp > CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.i
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/a_estrella/coordenada.cpp" -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.s
-
-CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/flags.make
-CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o: ../src/mapa.cpp
-CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o -c "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/mapa.cpp"
-
-CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/mapa.cpp" > CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.i
-
-CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/mapa.cpp" -o CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pili/Desktop/tpg-1c2024-stars/src/a_estrella/coordenada.cpp -o CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.s
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/flags.make
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o: ../src/aem/grafo.cpp
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o -c "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/aem/grafo.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/aem/grafo.cpp" > CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp > CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.i
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/aem/grafo.cpp" -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pili/Desktop/tpg-1c2024-stars/src/aem/grafo.cpp -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.s
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/flags.make
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o: ../src/aem/arista.cpp
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o -c "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/aem/arista.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/aem/arista.cpp" > CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp > CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.i
 
 CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/src/aem/arista.cpp" -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pili/Desktop/tpg-1c2024-stars/src/aem/arista.cpp -o CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.s
 
 CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/flags.make
 CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o: ../main.cpp
 CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o: CMakeFiles/AyED_TPG_1c2024.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o -c "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o -MF CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o.d -o CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o -c /home/pili/Desktop/tpg-1c2024-stars/main.cpp
 
 CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/main.cpp" > CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pili/Desktop/tpg-1c2024-stars/main.cpp > CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.i
 
 CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/main.cpp" -o CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pili/Desktop/tpg-1c2024-stars/main.cpp -o CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.s
 
 # Object files for target AyED_TPG_1c2024
 AyED_TPG_1c2024_OBJECTS = \
 "CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o" \
-"CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o" \
 "CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o" \
-"CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o" \
 "CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o" \
 "CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o" \
 "CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o"
@@ -181,15 +151,13 @@ AyED_TPG_1c2024_OBJECTS = \
 AyED_TPG_1c2024_EXTERNAL_OBJECTS =
 
 ../main: CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/vertice.cpp.o
-../main: CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/a_estrella.cpp.o
 ../main: CMakeFiles/AyED_TPG_1c2024.dir/src/a_estrella/coordenada.cpp.o
-../main: CMakeFiles/AyED_TPG_1c2024.dir/src/mapa.cpp.o
 ../main: CMakeFiles/AyED_TPG_1c2024.dir/src/aem/grafo.cpp.o
 ../main: CMakeFiles/AyED_TPG_1c2024.dir/src/aem/arista.cpp.o
 ../main: CMakeFiles/AyED_TPG_1c2024.dir/main.cpp.o
 ../main: CMakeFiles/AyED_TPG_1c2024.dir/build.make
 ../main: CMakeFiles/AyED_TPG_1c2024.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ../main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AyED_TPG_1c2024.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -201,6 +169,6 @@ CMakeFiles/AyED_TPG_1c2024.dir/clean:
 .PHONY : CMakeFiles/AyED_TPG_1c2024.dir/clean
 
 CMakeFiles/AyED_TPG_1c2024.dir/depend:
-	cd "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars" "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars" "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build" "/mnt/c/Users/Tomás Ghiglione/Desktop/FACULTAD/Algoritmos 2/TPGrupal/tpg-1c2024-stars/build/CMakeFiles/AyED_TPG_1c2024.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/pili/Desktop/tpg-1c2024-stars/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pili/Desktop/tpg-1c2024-stars /home/pili/Desktop/tpg-1c2024-stars /home/pili/Desktop/tpg-1c2024-stars/build /home/pili/Desktop/tpg-1c2024-stars/build /home/pili/Desktop/tpg-1c2024-stars/build/CMakeFiles/AyED_TPG_1c2024.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/AyED_TPG_1c2024.dir/depend
 
