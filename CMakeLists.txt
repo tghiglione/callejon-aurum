@@ -19,8 +19,8 @@ set(ARCHIVOS_FUENTE
         include/matriz.hpp
         src/a_estrella/vertice.cpp
         include/a_estrella/vertice.hpp
-        #src/a_estrella/a_estrella.cpp
-        #include/a_estrella/a_estrella.hpp
+        src/a_estrella/a_estrella.cpp
+        include/a_estrella/a_estrella.hpp
         src/a_estrella/coordenada.cpp
         include/a_estrella/coordenada.hpp
         #src/mapa.cpp
