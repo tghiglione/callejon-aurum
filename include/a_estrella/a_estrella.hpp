@@ -35,6 +35,9 @@ private:
     // Post: Devuelve el camino encontrado desde el origen hasta el destino.
     std::stack<coordenada> reconstruir_camino(vertice *destino);
 
+    // Pre: Los vertices actual y fin no son nulos, mapa y heuristica estan correctamente implementados
+    // Post: Agrega los vecinos al conjunto abierto si no están en el conjunto cerrado
+    // y actualiza su costo, padre y distancia si se encuentra un camino más corto.
     void verificar_vecinos(vertice* actual, vertice* fin, mapa& mapa_callejon, int heuristica(vertice*, vertice*));
 
 public:
@@ -45,6 +48,8 @@ public:
     // Sin embargo, probablemente les convenga revisar de antemano si tiene sentido la búsqueda.
     std::stack<coordenada> obtener_camino_minimo(coordenada origen, coordenada destino, mapa &mapa_callejon, int heuristica(vertice *, vertice *));
 
+    // Pre: los vertices a y b no son nulos
+    // Post: Devuelve la distancia Manhattan entre vertice a y b
     static int heuristica_manhattan(vertice *a, vertice *b);
     //static int heuristica_euclidiana(vertice *a, vertice *b); prueba con otra heuristica
 };

@@ -44,18 +44,18 @@ std::stack<coordenada> a_estrella::reconstruir_camino(vertice* destino) {
 
 void a_estrella::verificar_vecinos(vertice *actual, vertice *fin, mapa &mapa_callejon, int (*heuristica)(vertice *, vertice *)) {
     for (const auto& coordenadas : direcciones) {
-        coordenada vecino_pos = {actual->posicion.x() + coordenadas.first, actual->posicion.y() + coordenadas.second}; //calculo la coordenada del vecino
+        coordenada posicion_vecino = {actual->posicion.x() + coordenadas.first, actual->posicion.y() + coordenadas.second}; //calculo la coordenada del vecino
 
-        if (mapa_callejon.es_vecino_valido(vecino_pos) && !buscar_vertice(set_cerrado, vecino_pos)) { //que sea 'caminable' y no este en el set cerrado
+        if (mapa_callejon.es_vecino_valido(posicion_vecino) && !buscar_vertice(set_cerrado, posicion_vecino)) { //que sea 'caminable' y no este en el set cerrado
             int nuevo_costo = actual->costo_origen + 1;
-            vertice* vecino = buscar_vertice(set_abierto, vecino_pos); //busco al vecino en el conjunto abierto
+            vertice* vecino = buscar_vertice(set_abierto, posicion_vecino); //busco al vecino en el conjunto abierto
 
             if (vecino == nullptr) {                                        //si no esta, lo agrego
-                vecino = new vertice(vecino_pos, actual);
+                vecino = new vertice(posicion_vecino, actual);
                 vecino->costo_origen = nuevo_costo;
                 vecino->distancia_destino = heuristica(vecino, fin);
                 set_abierto.push_back(vecino);
-            } else if (nuevo_costo < vecino->costo_origen) {            //si esta
+            } else if (nuevo_costo < vecino->costo_origen) {            //si esta evaluo si hay un costo menor
                 vecino->padre = actual;
                 vecino->costo_origen = nuevo_costo;
                 vecino->distancia_destino = heuristica(vecino, fin);
