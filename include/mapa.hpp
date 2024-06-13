@@ -1,6 +1,6 @@
 #ifndef AYED_TPG_1C2024_MAPA_HPP
 #define AYED_TPG_1C2024_MAPA_HPP
-
+#include "matriz.hpp"
 #include "coordenada.hpp"
 
 /* Esta clase es la encargada de decirle a a_estrella si la posición de un vecino es válida o no.
@@ -10,6 +10,8 @@
  * TIP: Tienen una matriz ya implementada como parte de la plantilla del TP. */
 
 class mapa {
+private:
+    matriz<void*> map; 
 public:
     // Pre: -
     // Post: Devuelve true si la posición del vecino es válida (es decir, es una coordenada válida y es caminable).
