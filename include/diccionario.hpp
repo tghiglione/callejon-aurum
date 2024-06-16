@@ -91,6 +91,7 @@ public:
     ~diccionario();
 };
 
+
 template<typename c, typename T, bool (* comp)(c, c)>
 diccionario<c, T, comp>::diccionario() {
     raiz = nullptr;

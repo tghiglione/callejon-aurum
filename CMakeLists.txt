@@ -29,11 +29,19 @@ set(ARCHIVOS_FUENTE
         include/aem/grafo.hpp
         src/aem/arista.cpp
         include/aem/arista.hpp
+        include/juego_principal.hpp
+        include/juego_secundario.hpp
+        include/menu.hpp
+        include/pedido.hpp
+        include/local.hpp
+        include/casillero.hpp
+        include/tablero.hpp
 )
 
 add_executable(AyED_TPG_1c2024
         ${ARCHIVOS_FUENTE}
         main.cpp
+        include/juego_principal.hpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "main")
