@@ -1,6 +1,7 @@
 #ifndef AYED_TPG_1C2024_HEAP_HPP
 #define AYED_TPG_1C2024_HEAP_HPP
 
+#include <iostream>
 #include <vector>
 #include <cstdlib>
 #include <exception>
@@ -35,8 +36,8 @@ private:
     // Post: Devuelve un numero entre 0 y 100000.
     int generar_random();
 
-    unsigned long contador_downheap;
-    unsigned long contador_upheap;
+    unsigned long contador_downheap = 0;
+    unsigned long contador_upheap = 0;
 
     // NOTA: No es necesario que lancen excepciones en estos métodos porque son privados.
     // Deberían siempre asegurar que los índices pasados por parámetros son válidos.
@@ -93,16 +94,15 @@ void heap<T, comp>::swap(size_t indice_1, size_t indice_2)
 template<typename T, bool (* comp)(T, T)>
 void heap<T, comp>::upheap(size_t& indice)
 {
-    if (indice == 0)
+    if (indice != 0)
     {
-        return;
-    }
-    size_t padre = (indice - 1) / 2;
-    if(comp(datos[indice], datos[padre]))
-    {
-        swap(indice, padre);
-        contador_upheap++;
-        upheap(padre);
+        size_t padre = (indice - 1) / 2;
+        if(comp(datos[indice], datos[padre]))
+        {
+            swap(indice, padre);
+            contador_upheap++;
+            upheap(padre);
+        }
     }
 }
 
@@ -112,11 +112,11 @@ void heap<T, comp>::downheap(size_t& indice)
     size_t hijo_izquierdo = (2 * indice) + 1;
     size_t hijo_derecho = (2 * indice) + 2;
     size_t nodo = indice;
-    if (hijo_izquierdo < tamanio() && comp(datos[hijo_izquierdo], datos[indice]))
+    if (hijo_izquierdo < tamanio() && comp(datos[hijo_izquierdo], datos[nodo]))
     {
         nodo = hijo_izquierdo;
     }
-    if (hijo_derecho < tamanio() && comp(datos[hijo_derecho], datos[indice]))
+    if (hijo_derecho < tamanio() && comp(datos[hijo_derecho], datos[nodo]))
     {
         nodo = hijo_derecho;
     }
@@ -124,7 +124,7 @@ void heap<T, comp>::downheap(size_t& indice)
     {
         swap(nodo, indice);
         contador_downheap++;
-        downheap(indice);
+        downheap(nodo);
     }
 }
 
@@ -187,6 +187,10 @@ void heap<T, comp>::informar_complejidad()
     for (int tamanio : TAMANIOS_HEAP) {
         size_t total_upheaps = 0;
         size_t total_downheaps = 0;
+        size_t mayor_upheaps = 0;
+        size_t mayor_downheaps = 0;
+        size_t menor_downheaps = 100;
+        size_t menor_upheaps = 100;
 
         for (int i = 0; i < CANTIDAD_EXPERIMENTOS; i++)
         {
@@ -196,9 +200,38 @@ void heap<T, comp>::informar_complejidad()
             {
                 heap_informe.alta(generar_random());
             }
+            size_t alta_informe = heap_informe.alta_complejidad(generar_random());
+            total_upheaps += alta_informe;
 
-            total_upheaps += heap_informe.alta_complejidad(generar_random());
-            total_downheaps += heap_informe.baja_complejidad();
+            if (mayor_upheaps < alta_informe)
+            {
+                mayor_upheaps = alta_informe;
+            }
+            if (menor_upheaps > alta_informe)
+            {
+                menor_upheaps = alta_informe;
+            }
+        }
+
+        for (int i = 0; i < CANTIDAD_EXPERIMENTOS; i++)
+        {
+            heap<int, comp> heap_informe;
+
+            for (int j = 0; j < tamanio; j++)
+            {
+                heap_informe.alta(generar_random());
+            }
+            size_t baja_informe = heap_informe.baja_complejidad();
+            total_downheaps += baja_informe;
+
+            if (mayor_downheaps < baja_informe)
+            {
+                mayor_downheaps = baja_informe;
+            }
+            if (menor_downheaps > baja_informe)
+            {
+                menor_downheaps = baja_informe;
+            }
         }
 
         double promedio_upheaps = static_cast<double>(total_upheaps) / CANTIDAD_EXPERIMENTOS;
@@ -206,7 +239,13 @@ void heap<T, comp>::informar_complejidad()
 
         std::cout << "Tamaño del heap: " << tamanio << std::endl;
         std::cout << "Promedio de upheap en " << CANTIDAD_EXPERIMENTOS << " altas: " << promedio_upheaps << std::endl;
+        std::cout << "Total de upheaps: " << total_upheaps << std::endl;
+        std::cout << "Mayor cantidad de upheaps en un alta: " << mayor_upheaps << std::endl;
+        std::cout << "Menor cantidad de upheaps en una alta: " << menor_upheaps << std::endl;
         std::cout << "Promedio de downheap en " << CANTIDAD_EXPERIMENTOS << " bajas: " << promedio_downheaps << std::endl;
+        std::cout << "Total de downheaps: " << total_downheaps << std::endl;
+        std::cout << "Mayor cantidad de downheaps en una baja: " << mayor_downheaps << std::endl;
+        std::cout << "Menor cantidad de downheaps en una baja: " << menor_downheaps << std::endl;
         std::cout << std::endl;
     }
 }
