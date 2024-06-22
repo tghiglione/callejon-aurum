@@ -1,5 +1,5 @@
 #include "mapa.hpp"
-#include "matriz.hpp"
+
 bool mapa::es_vecino_valido(coordenada posicion) {
     int tam_filas = int(map.filas());
     int tam_col = int(map.columnas());
@@ -8,5 +8,9 @@ bool mapa::es_vecino_valido(coordenada posicion) {
         return false;
     }
 
-    return map.elemento(static_cast<size_t>(posicion.x()), static_cast<size_t>(posicion.y())) == nullptr;
+    return map.elemento(static_cast<size_t>(posicion.x()), static_cast<size_t>(posicion.y())) == Casillero::DISPONIBLE;
+}
+
+mapa::mapa(Tablero tablero) {
+    map = tablero.obtener_matriz_tablero();
 }
