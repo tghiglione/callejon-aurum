@@ -5,6 +5,10 @@
 #include "arista.hpp"
 #include <algorithm>
 
+#include <iomanip> 
+
+
+
 grafo::grafo(size_t cantidad_vertices) {
     matriz_adyacencia = matriz(cantidad_vertices, INFINITO);
     for (size_t i = 0; i < matriz_adyacencia.columnas(); i++) {
@@ -91,7 +95,7 @@ void grafo::unir_subconjuntos(size_t conjunto_a, size_t conjunto_b, std::vector<
 }
 
 std::vector<arista> grafo::obtener_aem() {
-    std::vector<arista> arbol_expansion_minima;
+    std::vector<arista> arbol_expansion_maxima;
 
     auto todas_las_aristas = obtener_todas_las_aristas(matriz_adyacencia);
     std::sort(todas_las_aristas.begin(), todas_las_aristas.end(), comparar_aristas_por_peso);
@@ -101,14 +105,69 @@ std::vector<arista> grafo::obtener_aem() {
         padres[vertice] = vertice;
     }
 
-    for ( auto& arista : todas_las_aristas) {
-        auto origen = arista.obtener_vertices().first;
-        auto destino = arista.obtener_vertices().second;
+    for ( arista& arista : todas_las_aristas) {
+        size_t origen = arista.obtener_vertices().first;
+        size_t destino = arista.obtener_vertices().second;
 
         if (encontrar_padre(origen, padres) != encontrar_padre(destino, padres)) {
-            arbol_expansion_minima.push_back(arista);
+            arbol_expansion_maxima.push_back(arista);
             unir_subconjuntos(origen, destino, padres);
         }
     }
-    return arbol_expansion_minima;
+
+
+/* 
+    imprimir_aem(arbol_expansion_maxima); */
+/*     int costo_total = calcular_costo_total(arbol_expansion_maxima);
+    std::cout << "Costo total del AEM: " << costo_total << std::endl;
+ */
+    return arbol_expansion_maxima;
 }
+/* 
+void grafo::imprimir_aem( std::vector<arista>& arbol_expansion_maxima)  {
+    std::cout << "Senderos a priorizar, por cantidad de pedidos:" << std::endl;
+    for ( arista& arista : arbol_expansion_maxima) {
+        imprimir_arista(arista);
+    }
+}
+
+void grafo::imprimir_arista( arista& arista) {
+    std::pair<size_t, size_t> vertices = arista.obtener_vertices();
+    int peso = arista.obtener_peso();
+    char nombre_local_salida = char (65+vertices.first);
+    char nombre_local_desitino = char(65+vertices.second);
+    std::cout << "Mejorar camino entre : Local " << nombre_local_salida << " -> Local " << nombre_local_desitino << ", Cantidad de pedidos : " << peso << std::endl;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* int grafo::calcular_costo_total(std::vector<arista>& aristas) {
+    int costo_total = 0;
+    for (auto& arista : aristas) {
+        costo_total += arista.obtener_peso();
+    }
+    return costo_total;
+} */
+/* 
+void grafo::imprimir_resultado_aem(std::vector<arista>& aem) {
+    std::cout << "Resultados del Árbol de Expansión Mínima (AEM):" << std::endl;
+    for ( auto& arista : aem) {
+        auto vertices = arista.obtener_vertices();
+        auto peso = arista.obtener_peso();
+        std::cout << "mejora camino " << vertices.first << " -> " << vertices.second << ": " << peso << std::endl;
+    }
+
+} */
