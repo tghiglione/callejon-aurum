@@ -2,12 +2,12 @@
 #define AYED_TPG_1C2024_JUEGO_SECUNDARIO_HPP
 #include "iostream"
 #include "vector"
-#include "arista.hpp"
-#include "grafo.hpp"
+#include "aem/arista.hpp" 
+#include "aem/grafo.hpp"
 
 class JuegoSecundario{
 private:
-
+    grafo grafo_principal; 
 
 public:
 
