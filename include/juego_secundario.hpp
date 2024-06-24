@@ -18,10 +18,6 @@ public:
 
     void imprimir_arista( arista& arista) ;
     void imprimir_aem( std::vector<arista>& arbol_expansion_maxima) ;
-    /* Pre:
-     * Post:
-     */
-    void imprimir_menu_juego_secundario();
 
 };
 
@@ -30,14 +26,6 @@ std::vector<arista> JuegoSecundario::obtener_caminos_transitados() {
     std::vector<arista> aem = grafo_principal.obtener_aem();
     imprimir_aem(aem);
     return aem;
-}
-
-void JuegoSecundario::imprimir_menu_juego_secundario() {
-    std::cout << "----- Menú Juego Secundario -----" << std::endl;
-    std::cout << "1. Obtener camino máximo" << std::endl;
-    std::cout << "2. Otra opción" << std::endl;
-    std::cout << "3. Salir" << std::endl;
-    std::cout << "Ingrese una opción: ";
 }
 
 void JuegoSecundario::imprimir_aem( std::vector<arista>& arbol_expansion_maxima)  {
