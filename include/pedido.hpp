@@ -1,9 +1,9 @@
+/* Trabajos e implementaciones realizadas por Elias Cuba y Mauricio Laganga. */
+
 #ifndef AYED_TPG_1C2024_PEDIDO_HPP
 #define AYED_TPG_1C2024_PEDIDO_HPP
 
-#include "Local.hpp"
-
-class JuegoPrincipal;
+#include "local.hpp"
 
 class Pedido {
 private:
@@ -13,6 +13,8 @@ private:
     int prioridad_pedido;
 
 public:
+    Pedido();
+
     Pedido(Local* origen, Local* destino, int peso) {
         this->origen = origen;
         this->destino = destino;
@@ -24,7 +26,19 @@ public:
         return prioridad_pedido < pedido1.prioridad_pedido;
     }
 
-    friend class JuegoPrincipal;
+    int obtener_prioridad() const {
+        return prioridad_pedido;
+    }
+
+    Local obtener_origen() {
+        Local _origen = *origen;
+        return _origen;
+    }
+
+    Local obtener_destino() {
+        Local _destino = *destino;
+        return _destino;
+    }
 };
 
-#endif
+#endif // AYED_TPG_1C2024_PEDIDO_HPP
