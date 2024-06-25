@@ -41,7 +41,6 @@ set(ARCHIVOS_FUENTE
 add_executable(AyED_TPG_1c2024
         ${ARCHIVOS_FUENTE}
         main.cpp
-        include/juego_principal.hpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "main")
