@@ -32,7 +32,7 @@ enum class Casillero {OCUPADO, DISPONIBLE, LOCAL, CLIENTE, CAMINO, LOCAL_ORIGEN,
 const std::string COLOR_OCUPADO = "\033[47m   "; //gris
 const std::string COLOR_DISPONIBLE = "\033[42m   "; //verde
 const std::string COLOR_LOCAL = "\033[46m   "; //cian
-const std::string COLOR_CLIENTE = "\033[33m\033[41m   "; //naranja
+const std::string COLOR_CLIENTE = "\033[48;5;208m   "; //naranja
 const std::string COLOR_CAMINO = "\033[41m   "; //rojo
 const std::string COLOR_LOCAL_ORIGEN = "\033[44m   "; //azul
 const std::string COLOR_LOCAL_DESTINO = "\033[45m   "; //magenta
@@ -72,7 +72,23 @@ public:
             for (size_t j = 0; j < COLUMNAS_CALLEJON; j++) {
                 if (tablero.elemento(i, j) == Casillero::DISPONIBLE) {
                     std::cout << COLOR_DISPONIBLE;
-                } else {
+                }
+                else if (tablero.elemento(i, j) == Casillero::LOCAL_ORIGEN) {
+                    std::cout << COLOR_LOCAL_ORIGEN;
+                }
+                else if (tablero.elemento(i, j) == Casillero::LOCAL_DESTINO) {
+                    std::cout << COLOR_LOCAL_DESTINO;
+                }
+                else if (tablero.elemento(i, j) == Casillero::LOCAL) {
+                    std::cout << COLOR_LOCAL;
+                }
+                else if (tablero.elemento(i, j) == Casillero::CLIENTE) {
+                    std::cout << COLOR_CLIENTE;
+                }
+                else if (tablero.elemento(i, j) == Casillero::CAMINO) {
+                    std::cout << COLOR_CAMINO;
+                }
+                else {
                     std::cout << COLOR_OCUPADO;
                 }
             }

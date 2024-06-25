@@ -298,8 +298,8 @@ void diccionario<c, T, comp>::ejecutar(void (*funcion)(T)) {
 template<typename c, typename T, bool comp(c, c)>
 void diccionario<c, T, comp>::ejecutar_recursivo(nodo<c, T, comp>* nodo, void (*funcion)(T)) {
     if (nodo) {
-        ejecutar_recursivo(nodo->hijo_izquierdo, funcion);
         funcion(nodo->dato);
+        ejecutar_recursivo(nodo->hijo_izquierdo, funcion);
         ejecutar_recursivo(nodo->hijo_derecho, funcion);
     }
 }
@@ -311,35 +311,23 @@ std::size_t diccionario<c, T, comp>::tamanio() {
 
 template<typename c, typename T, bool comp(c, c)>
 bool diccionario<c, T, comp>::vacio() {
-    return cantidad_datos == 0;
+    return raiz == nullptr;
 }
 
 template<typename c, typename T, bool comp(c, c)>
 bool diccionario<c, T, comp>::esta_en_diccionario(c clave_busqueda) {
     nodo<c, T, comp>* actual = raiz;
-    if (vacio()) {
-        return false;
-    }
 
     while (actual) {
-        if (actual->clave == clave_busqueda) {
-            return true;
-        } else if (comp(actual->clave, clave_busqueda)) {
+        if (comp(clave_busqueda, actual->clave)) {
             actual = actual->hijo_izquierdo;
-        } else {
+        } else if (comp(actual->clave, clave_busqueda)) {
             actual = actual->hijo_derecho;
+        } else {
+            return true;
         }
     }
     return false;
-}
-
-template<typename c, typename T, bool comp(c, c)>
-void diccionario<c, T, comp>::baja_postorder_recursivo(nodo<c, T, comp>* nodo) {
-    if (nodo) {
-        baja_postorder_recursivo(nodo->hijo_izquierdo);
-        baja_postorder_recursivo(nodo->hijo_derecho);
-        baja(nodo->clave);
-    }
 }
 
 template<typename c, typename T, bool comp(c, c)>
@@ -347,4 +335,13 @@ diccionario<c, T, comp>::~diccionario() {
     baja_postorder_recursivo(raiz);
 }
 
-#endif // AYED_TPG_1C2024_DICCIONARIO_HPP
+template<typename c, typename T, bool comp(c, c)>
+void diccionario<c, T, comp>::baja_postorder_recursivo(nodo<c, T, comp>* nodo) {
+    if (nodo) {
+        baja_postorder_recursivo(nodo->hijo_izquierdo);
+        baja_postorder_recursivo(nodo->hijo_derecho);
+        delete nodo;
+    }
+}
+
+#endif //AYED_TPG_1C2024_DICCIONARIO_HPP
