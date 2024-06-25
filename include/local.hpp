@@ -13,6 +13,7 @@ private:
 public:
 
     //constructor
+    Local();
     Local(std::string nombre, int prioridad, size_t x, size_t y) :
         nombre(nombre), prioridad(prioridad), coordenada1((int)x, (int)y) {}
 
@@ -28,6 +29,8 @@ public:
     //Post: Devuelve la coordenada del local
     coordenada obtener_coordenada() const;
 };
+
+Local::Local() {}
 
 int Local::obtener_prioridad() const{
     return prioridad;
