@@ -8,7 +8,8 @@ bool mapa::es_vecino_valido(coordenada posicion) {
         return false;
     }
 
-    return map.elemento(static_cast<size_t>(posicion.x()), static_cast<size_t>(posicion.y())) == Casillero::DISPONIBLE;
+    return map.elemento(static_cast<size_t>(posicion.x()), static_cast<size_t>(posicion.y())) == Casillero::DISPONIBLE
+    || map.elemento(static_cast<size_t>(posicion.x()), static_cast<size_t>(posicion.y())) == Casillero::LOCAL;
 }
 
 mapa::mapa(Tablero tablero) {
