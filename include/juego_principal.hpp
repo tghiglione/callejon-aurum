@@ -125,7 +125,7 @@ void JuegoPrincipal::generar_local() {
 
 void JuegoPrincipal::generar_clientes() {
     size_t cantidad_clientes = rand() % CANTIDAD_MAXIMA_CLIENTES;
-    for (size_t i = 0; i < cantidad_clientes; ++i) {
+    for (size_t i = 0; i < cantidad_clientes; i++) {
         size_t x, y;
         do {
             x = rand() % FILAS_CALLEJON;
