@@ -54,6 +54,10 @@ public:
     static void unir_subconjuntos(size_t conjunto_a, size_t conjunto_b, std::vector<size_t>& padres);
 
 
+/*     void imprimir_arista( arista& arista) ;
+
+    void imprimir_aem( std::vector<arista>& arbol_expansion_maxima) ;
+   // int calcular_costo_total(std::vector<arista>& aristas); */
 };
 
 #endif
