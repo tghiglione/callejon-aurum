@@ -215,6 +215,7 @@ void JuegoPrincipal::imprimir_mapa() {
 void JuegoPrincipal::jugar() {
     bool jugando = true;
     std::string nombre_local;
+    generar_clientes();
     while (jugando) {
         imprimir_menu_juego_principal();
         int opcion;
