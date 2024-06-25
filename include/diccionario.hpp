@@ -86,6 +86,10 @@ public:
     // Post: Retorna true si el diccionario está vacío, false en caso contrario.
     bool vacio();
 
+    //Pre: -
+    //Post: Retorna true si la clave está en el diccionario
+    bool esta_en_diccionario(c clave_busqueda);
+
     diccionario(const diccionario& abb) = delete;
     void operator=(const diccionario& abb) = delete;
     ~diccionario();
@@ -306,6 +310,26 @@ std::size_t diccionario<c, T, comp>::tamanio() {
 template<typename c, typename T, bool (* comp)(c, c)>
 bool diccionario<c, T, comp>::vacio() {
     return cantidad_datos == 0;
+}
+
+template<typename c, typename T, bool (* comp)(c, c)>
+bool diccionario<c, T, comp>::esta_en_diccionario(c clave_busqueda) {
+    nodo<c, T, comp>* actual = raiz;
+    if (vacio()) {
+        return false;
+
+    } while (actual) {
+        if (actual->clave == clave_busqueda) {
+            return true;
+
+        } else if (comp(actual->clave, clave_busqueda)) {
+            actual = actual->hijo_izquierdo;
+
+        } else {
+            actual = actual->hijo_derecho;
+        }
+    }
+    return false;
 }
 
 template<typename c, typename T, bool (* comp)(c, c)>
