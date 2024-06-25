@@ -3,9 +3,7 @@
 #ifndef AYED_TPG_1C2024_PEDIDO_HPP
 #define AYED_TPG_1C2024_PEDIDO_HPP
 
-#include "Local.hpp"
-
-class JuegoPrincipal;
+#include "local.hpp"
 
 class Pedido {
 private:
