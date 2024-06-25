@@ -17,7 +17,6 @@ const std::vector<int> PREORDER = {RAIZ, NODO_IZQUIERDO, NODO_DERECHO};
 const std::vector<int> INORDER = {NODO_IZQUIERDO, RAIZ, NODO_DERECHO};
 const std::vector<int> POSTORDER = {NODO_IZQUIERDO, NODO_DERECHO, RAIZ};
 
-
 class diccionario_exception : public std::exception {
 };
 
@@ -37,7 +36,7 @@ private:
     // Pre: 'nodo' es un puntero que apunta a un nodo del diccionario o nullptr.
     // Post: Elimina todos los nodos en el subarbol de 'nodo'.
     void baja_postorder_recursivo(nodo<c, T, comp>* nodo);
-    
+
     // Pre: Nodo no debe ser nulo.
     // Post: Se aplica la función 'funcion' a cada elemento en orden.
     void ejecutar_recursivo(nodo<c, T, comp>* nodo, void (*funcion)(T));
@@ -86,23 +85,23 @@ public:
     // Post: Retorna true si el diccionario está vacío, false en caso contrario.
     bool vacio();
 
-    //Pre: -
-    //Post: Retorna true si la clave está en el diccionario
+    // Pre: -
+    // Post: Retorna true si la clave está en el diccionario
     bool esta_en_diccionario(c clave_busqueda);
 
     diccionario(const diccionario& abb) = delete;
     void operator=(const diccionario& abb) = delete;
+
     ~diccionario();
 };
 
-
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 diccionario<c, T, comp>::diccionario() {
     raiz = nullptr;
     cantidad_datos = 0;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 void diccionario<c, T, comp>::alta(c clave, T dato) {
     nodo<c, T, comp>* actual = raiz;
     nodo<c, T, comp>* padre = nullptr;
@@ -135,7 +134,7 @@ void diccionario<c, T, comp>::alta(c clave, T dato) {
     cantidad_datos++;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 void diccionario<c, T, comp>::baja(c clave) {
     nodo<c, T, comp>* actual = raiz;
     nodo<c, T, comp>* padre = nullptr;
@@ -210,7 +209,7 @@ void diccionario<c, T, comp>::baja(c clave) {
     cantidad_datos--;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 T& diccionario<c, T, comp>::operator[](c clave) {
     nodo<c, T, comp>* actual = raiz;
 
@@ -226,44 +225,47 @@ T& diccionario<c, T, comp>::operator[](c clave) {
     throw diccionario_exception();
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 std::vector<T> diccionario<c, T, comp>::recorridos_recursivos(std::vector<T> lista, nodo<c, T, comp>* nodo, std::vector<int> recorrido) {
     if (nodo) {
         for (size_t i = 0; i < 3; i++) {
             switch (recorrido[i]) {
                 case RAIZ:
-                    lista.push_back(nodo->dato); break;
+                    lista.push_back(nodo->dato);
+                    break;
 
                 case NODO_IZQUIERDO:
-                    lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, recorrido); break;
+                    lista = recorridos_recursivos(lista, nodo->hijo_izquierdo, recorrido);
+                    break;
 
                 case NODO_DERECHO:
-                    lista = recorridos_recursivos(lista, nodo->hijo_derecho, recorrido); break;
+                    lista = recorridos_recursivos(lista, nodo->hijo_derecho, recorrido);
+                    break;
             }
         }
     }
     return lista;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 std::vector<T> diccionario<c, T, comp>::inorder() {
     std::vector<T> lista_inorder;
     return recorridos_recursivos(lista_inorder, raiz, INORDER);
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 std::vector<T> diccionario<c, T, comp>::preorder() {
     std::vector<T> lista_preorder;
     return recorridos_recursivos(lista_preorder, raiz, PREORDER);
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 std::vector<T> diccionario<c, T, comp>::postorder() {
     std::vector<T> lista_postorder;
     return recorridos_recursivos(lista_postorder, raiz, POSTORDER);
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 std::vector<T> diccionario<c, T, comp>::ancho() {
     std::vector<T> resultado;
 
@@ -288,12 +290,12 @@ std::vector<T> diccionario<c, T, comp>::ancho() {
     return resultado;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 void diccionario<c, T, comp>::ejecutar(void (*funcion)(T)) {
     ejecutar_recursivo(raiz, funcion);
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 void diccionario<c, T, comp>::ejecutar_recursivo(nodo<c, T, comp>* nodo, void (*funcion)(T)) {
     if (nodo) {
         ejecutar_recursivo(nodo->hijo_izquierdo, funcion);
@@ -302,29 +304,28 @@ void diccionario<c, T, comp>::ejecutar_recursivo(nodo<c, T, comp>* nodo, void (*
     }
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 std::size_t diccionario<c, T, comp>::tamanio() {
     return cantidad_datos;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 bool diccionario<c, T, comp>::vacio() {
     return cantidad_datos == 0;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 bool diccionario<c, T, comp>::esta_en_diccionario(c clave_busqueda) {
     nodo<c, T, comp>* actual = raiz;
     if (vacio()) {
         return false;
+    }
 
-    } while (actual) {
+    while (actual) {
         if (actual->clave == clave_busqueda) {
             return true;
-
         } else if (comp(actual->clave, clave_busqueda)) {
             actual = actual->hijo_izquierdo;
-
         } else {
             actual = actual->hijo_derecho;
         }
@@ -332,18 +333,18 @@ bool diccionario<c, T, comp>::esta_en_diccionario(c clave_busqueda) {
     return false;
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 void diccionario<c, T, comp>::baja_postorder_recursivo(nodo<c, T, comp>* nodo) {
     if (nodo) {
         baja_postorder_recursivo(nodo->hijo_izquierdo);
         baja_postorder_recursivo(nodo->hijo_derecho);
-        diccionario::baja(nodo->clave);
+        baja(nodo->clave);
     }
 }
 
-template<typename c, typename T, bool (* comp)(c, c)>
+template<typename c, typename T, bool comp(c, c)>
 diccionario<c, T, comp>::~diccionario() {
     baja_postorder_recursivo(raiz);
 }
 
-#endif
+#endif // AYED_TPG_1C2024_DICCIONARIO_HPP

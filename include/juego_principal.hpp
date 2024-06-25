@@ -34,52 +34,45 @@ const std::vector<std::string> NOMBRES = {
 
 class JuegoPrincipal {
 private:
-
-    //Pre: -
-    //Post: Devuelve true si el clave1 < clave2
-    static bool comparar_diccionario (std::string clave1, std::string clave2);
-
-    //Pre: -
-    //Post: Devuelve true si el peso1 > peso2
-    static bool comparar_heap (Pedido pedido1, Pedido pedido2);
+    static bool comparar_diccionario(std::string clave1, std::string clave2);
+    static bool comparar_heap(Pedido pedido1, Pedido pedido2);
 
     diccionario<std::string, Local, comparar_diccionario> locales;
     heap<Pedido, comparar_heap> pedidos;
     Tablero tablero;
     a_estrella algoritmo;
 
-    //Pre: Recibe una pila de coordenadas
-    //Post: Modifica el tipo de los casilleros, correspondientes a las coordenadas en pila_coordenadas, en tablero
+    // Pre: Recibe una pila de coordenadas
+    // Post: Modifica el tipo de los casilleros correspondientes a las coordenadas en pila_coordenadas en el tablero
     void cambiar_tipo_coordenadas(std::stack<coordenada> pila_coordenadas, Casillero tipo);
 
 public:
-
-    //Pre: -
-    //Post: Imprime el menu correspondiente a esta clase
+    // Pre: -
+    // Post: Imprime el menú correspondiente a esta clase
     void imprimir_menu_juego_principal();
 
-    //Pre: -
-    //Post: Se genera un local random, se añade a locales y tablero
+    // Pre: -
+    // Post: Se genera un local aleatorio, se añade a locales y al tablero
     void generar_local();
 
-    //Pre: -
-    //Post: Se genera una coordenada random para los clientes y se añade a tablero
+    // Pre: -
+    // Post: Se generan coordenadas aleatorias para los clientes y se añaden al tablero
     void generar_clientes();
 
-    //Pre: -
-    //Post: Se imprime una copia del tablero original que muestra el camino minimo entre origen y destino
+    // Pre: -
+    // Post: Imprime una copia del tablero que muestra el camino mínimo entre local_origen y local_destino
     void generar_camino_minimo(Local local_origen, Local local_destino);
 
-    //Pre: -
-    //Post: Genera un pedido personalizado, lo muestra por pantalla y lo añade a pedidos
+    // Pre: -
+    // Post: Genera un pedido personalizado, lo muestra por pantalla y lo añade a pedidos
     void generar_pedido();
 
-    //Pre: -
-    //Post: Muestra por pantalla el tablero con clientes y locales
+    // Pre: -
+    // Post: Muestra por pantalla el tablero con clientes y locales
     void imprimir_mapa();
 
-    //Pre: -
-    //Post: contempla la logica de JuegoPrincipal
+    // Pre: -
+    // Post: Controla la lógica del juego principal
     void jugar();
 };
 
@@ -107,7 +100,7 @@ void JuegoPrincipal::generar_local() {
         prioridades[i] = rand() % 100 + 1;
     }
 
-    size_t indice = (size_t) rand() % NOMBRES.size();
+    size_t indice = static_cast<size_t>(rand() % NOMBRES.size());
     std::string nombre_local = NOMBRES[indice];
     int prioridad = prioridades[indice];
 
@@ -117,7 +110,7 @@ void JuegoPrincipal::generar_local() {
         y = (size_t) rand() % COLUMNAS_CALLEJON;
     } while (tablero.tipo_elemento(x,y) != Casillero::DISPONIBLE);
 
-    Local nuevo_local (nombre_local,prioridad, x, y);
+    Local nuevo_local(nombre_local, prioridad, x, y);
     tablero.marcar_casillero(x, y, Casillero::LOCAL);
     locales.alta(nombre_local, nuevo_local);
 
@@ -129,9 +122,9 @@ void JuegoPrincipal::generar_local() {
 }
 
 void JuegoPrincipal::generar_clientes() {
-    size_t cantidad_clientes = (size_t) rand() % CANTIDAD_MAXIMA_CLIENTES, x, y;
-
+    size_t cantidad_clientes = rand() % CANTIDAD_MAXIMA_CLIENTES;
     for (size_t i = 0; i < cantidad_clientes; i++) {
+        size_t x, y;
         do {
             x = (size_t) rand() % FILAS_CALLEJON;
             y = (size_t) rand() % COLUMNAS_CALLEJON;
@@ -150,12 +143,12 @@ void JuegoPrincipal::cambiar_tipo_coordenadas(std::stack<coordenada> pila_coorde
 void JuegoPrincipal::generar_camino_minimo(Local local_origen, Local local_destino) {
     coordenada coordenada_local1 = local_origen.obtener_coordenada();
     coordenada coordenada_local2 = local_destino.obtener_coordenada();
-    mapa mapa_callejon (tablero);
+    mapa mapa_callejon(tablero);
 
     std::stack<coordenada> camino_minimo = algoritmo.obtener_camino_minimo(coordenada_local1, coordenada_local2,
-                                                               mapa_callejon, algoritmo.heuristica_manhattan);
+                                                                            mapa_callejon, algoritmo.heuristica_manhattan);
     if (camino_minimo.empty()) {
-        std::cout << "No existe camino desde" << local_origen.obtener_nombre() << "hasta" << local_destino.obtener_nombre() << "\n";
+        std::cout << "No existe camino desde " << local_origen.obtener_nombre() << " hasta " << local_destino.obtener_nombre() << "\n";
     } else {
         cambiar_tipo_coordenadas(camino_minimo, Casillero::CAMINO);
         tablero.imprimir_tablero();
@@ -166,23 +159,23 @@ void JuegoPrincipal::generar_camino_minimo(Local local_origen, Local local_desti
 void JuegoPrincipal::generar_pedido() {
     if (locales.vacio()) {
         std::cout << "No hay locales disponibles para generar un pedido.\n";
-
     } else {
         std::cout << "Locales disponibles:\n";
         std::vector<Local> locales_en_orden = locales.inorder();
-        for (size_t i = 0; i < locales.tamanio(); i++) {
-            std::cout << i + 1 << ". " << locales_en_orden[i].obtener_nombre() << "\n";
+        for (size_t i = 0; i < locales_en_orden.size(); ++i) {
+            std::cout << i << ". " << locales_en_orden[i].obtener_nombre() << "\n";
         }
 
-        size_t indice_destino;
-        size_t indice_origen;
+        size_t indice_origen, indice_destino;
         int peso;
-        std::cout << "Seleccione el índice del local de origen: "; std::cin >> indice_origen; indice_origen--;
-        std::cout << "Seleccione el índice del local de destino: "; std::cin >> indice_destino; indice_destino--;
-        std::cout << "Ingrese el peso del paquete: "; std::cin >> peso;
+        std::cout << "Seleccione el índice del local de origen: ";
+        std::cin >> indice_origen;
+        std::cout << "Seleccione el índice del local de destino: ";
+        std::cin >> indice_destino;
+        std::cout << "Ingrese el peso del paquete: ";
+        std::cin >> peso;
 
-        if (indice_origen >= 0 && indice_origen < locales.tamanio() &&
-            indice_destino >= 0 && indice_destino < locales.tamanio()) {
+        if (indice_origen < locales_en_orden.size() && indice_destino < locales_en_orden.size()) {
             Pedido pedido(&locales_en_orden[indice_origen], &locales_en_orden[indice_destino], peso);
             pedidos.alta(pedido);
             std::cout << "Se generó un pedido desde " << locales_en_orden[indice_origen].obtener_nombre()
@@ -211,21 +204,21 @@ void JuegoPrincipal::jugar() {
             case GENERAR_CLIENTES:
                 generar_clientes();
                 break;
-            case GENERAR_CAMINO_MINIMO: {
+            case GENERAR_CAMINO_MINIMO:
                 if (locales.tamanio() < 2) {
                     std::cout << "Se requieren al menos dos locales para generar un camino mínimo.\n";
-
                 } else {
                     Pedido pedido_prioritario = pedidos.baja();
                     generar_camino_minimo(pedido_prioritario.obtener_origen(), pedido_prioritario.obtener_destino());
                 }
                 break;
-            }
             case GENERAR_PEDIDO:
                 generar_pedido();
                 break;
             case BUSCAR_LOCAL:
-                std::cout << "Ingrese el nombre del local: " ; getline(std::cin, nombre_local);
+                std::cout << "Ingrese el nombre del local: ";
+                std::cin.ignore();
+                std::getline(std::cin, nombre_local);
 
                 for (char& c : nombre_local) {
                     c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));

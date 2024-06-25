@@ -1,3 +1,5 @@
+/* Trabajos e implementaciones realizadas por Elias Cuba y Mauricio Laganga. */
+
 #ifndef AYED_TPG_1C2024_PEDIDO_HPP
 #define AYED_TPG_1C2024_PEDIDO_HPP
 
@@ -11,7 +13,6 @@ private:
     int prioridad_pedido;
 
 public:
-
     Pedido();
 
     Pedido(Local* origen, Local* destino, int peso) {
@@ -40,4 +41,4 @@ public:
     }
 };
 
-#endif
+#endif // AYED_TPG_1C2024_PEDIDO_HPP
