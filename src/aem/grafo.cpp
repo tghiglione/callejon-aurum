@@ -14,6 +14,7 @@ grafo::grafo(size_t cantidad_vertices) {
     for (size_t i = 0; i < matriz_adyacencia.columnas(); i++) {
         matriz_adyacencia.elemento(i, i) = 0;
     }
+    
 }
 
 void grafo::agregar_vertice() {
@@ -123,6 +124,19 @@ std::vector<arista> grafo::obtener_aem() {
  */
     return arbol_expansion_maxima;
 }
+
+
+void grafo::incrementar_contador_pedidos(size_t origen, size_t destino) {
+    matriz_adyacencia.elemento(origen, destino)++;
+}
+
+int grafo::obtener_contador_pedidos(size_t origen, size_t destino) {
+    return matriz_adyacencia.elemento(origen, destino);
+}
+
+
+
+
 /* 
 void grafo::imprimir_aem( std::vector<arista>& arbol_expansion_maxima)  {
     std::cout << "Senderos a priorizar, por cantidad de pedidos:" << std::endl;

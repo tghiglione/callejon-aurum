@@ -199,7 +199,7 @@ void JuegoPrincipal::generar_pedido() {
         size_t indice_origen, indice_destino;
         int peso;
         std::cout << "Seleccione el índice del local de origen: ";
-        std::cin >> indice_origen ;
+        std::cin >> indice_origen;
         std::cout << "Seleccione el índice del local de destino: ";
         std::cin >> indice_destino;
         std::cout << "Ingrese el peso del paquete: ";
@@ -210,7 +210,9 @@ void JuegoPrincipal::generar_pedido() {
             pedidos.alta(pedido);
             std::cout << "Se generó un pedido desde " << locales_en_orden[indice_origen].obtener_nombre()
                       << " a " << locales_en_orden[indice_destino].obtener_nombre() << " con peso " << peso << "\n";
-                      grafo_principal.modificar_arista(indice_origen,indice_destino, peso);
+                      grafo_principal.incrementar_contador_pedidos(indice_origen, indice_destino);
+                    grafo_principal.modificar_arista(indice_origen, indice_destino, (grafo_principal.obtener_contador_pedidos(indice_origen, indice_destino)));
+                    
         } else {
             std::cout << "Índices de locales no válidos.\n";
         }
