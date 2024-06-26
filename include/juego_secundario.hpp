@@ -42,10 +42,7 @@ void JuegoSecundario::imprimir_aem( std::vector<arista>& arbol_expansion_maxima)
 void JuegoSecundario::imprimir_arista( arista& arista) {
     std::pair<size_t, size_t> vertices = arista.obtener_vertices();
     int peso = arista.obtener_peso();
-  //  char nombre_local_salida = char (65+vertices.first);
-    //char nombre_local_desitino = char(65+);
     std::cout << "Mejorar camino entre : Local " << vertices.first << " -> Local " << vertices.second << ", Cantidad de pedidos : " << peso << std::endl;
 }
-
 
 #endif //AYED_TPG_1C2024_JUEGO_SECUNDARIO_HPP

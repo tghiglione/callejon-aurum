@@ -5,7 +5,7 @@
 #include "arista.hpp"
 #include <algorithm>
 
-#include <iomanip> 
+#include <iomanip>
 
 
 
@@ -14,7 +14,7 @@ grafo::grafo(size_t cantidad_vertices) {
     for (size_t i = 0; i < matriz_adyacencia.columnas(); i++) {
         matriz_adyacencia.elemento(i, i) = 0;
     }
-    
+
 }
 
 void grafo::agregar_vertice() {
@@ -83,7 +83,7 @@ bool grafo::comparar_aristas_por_peso( arista& primera_arista,  arista& segunda_
 
 size_t grafo::encontrar_padre(size_t vertice, std::vector<size_t>& padres) {
     while (padres[vertice] != vertice) {
-        padres[vertice] = padres[padres[vertice]]; 
+        padres[vertice] = padres[padres[vertice]];
         vertice = padres[vertice];
     }
     return vertice;
@@ -117,7 +117,7 @@ std::vector<arista> grafo::obtener_aem() {
     }
 
 
-/* 
+/*
     imprimir_aem(arbol_expansion_maxima); */
 /*     int costo_total = calcular_costo_total(arbol_expansion_maxima);
     std::cout << "Costo total del AEM: " << costo_total << std::endl;
@@ -127,8 +127,21 @@ std::vector<arista> grafo::obtener_aem() {
 
 
 void grafo::incrementar_contador_pedidos(size_t origen, size_t destino) {
-    matriz_adyacencia.elemento(origen, destino)++;
+    if (origen < matriz_adyacencia.filas() && destino < matriz_adyacencia.columnas()) {
+        if (matriz_adyacencia.elemento(origen, destino) == INFINITO) {
+            matriz_adyacencia.elemento(origen, destino) = 1;
+        } else {
+            matriz_adyacencia.elemento(origen, destino)++;
+        }
+        // Si es un grafo no dirigido, también incrementa en la otra dirección
+        if (matriz_adyacencia.elemento(destino, origen) == INFINITO) {
+            matriz_adyacencia.elemento(destino, origen) = 1;
+        } else {
+            matriz_adyacencia.elemento(destino, origen)++;
+        }
+    }
 }
+
 
 int grafo::obtener_contador_pedidos(size_t origen, size_t destino) {
     return matriz_adyacencia.elemento(origen, destino);
@@ -137,7 +150,7 @@ int grafo::obtener_contador_pedidos(size_t origen, size_t destino) {
 
 
 
-/* 
+/*
 void grafo::imprimir_aem( std::vector<arista>& arbol_expansion_maxima)  {
     std::cout << "Senderos a priorizar, por cantidad de pedidos:" << std::endl;
     for ( arista& arista : arbol_expansion_maxima) {
@@ -175,7 +188,7 @@ void grafo::imprimir_arista( arista& arista) {
     }
     return costo_total;
 } */
-/* 
+/*
 void grafo::imprimir_resultado_aem(std::vector<arista>& aem) {
     std::cout << "Resultados del Árbol de Expansión Mínima (AEM):" << std::endl;
     for ( auto& arista : aem) {
