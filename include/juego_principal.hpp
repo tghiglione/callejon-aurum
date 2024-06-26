@@ -14,6 +14,7 @@
 #include "heap.hpp"
 #include "tablero.hpp"
 #include "diccionario.hpp"
+#include "grafo.hpp"
 
 const int GENERAR_LOCAL = 1;
 const int GENERAR_CAMINO_MINIMO = 2;
@@ -36,6 +37,8 @@ const std::vector<std::string> NOMBRES = {
 
 class JuegoPrincipal {
 private:
+//PILIIIIIIIII
+    grafo grafo_principal; 
     static bool comparar_diccionario(std::string clave1, std::string clave2);
     static bool comparar_heap(Pedido pedido1, Pedido pedido2);
 
@@ -79,6 +82,10 @@ public:
     // Pre: -
     // Post: Controla la lógica del juego principal
     void jugar();
+
+    grafo& obtener_grafo() {
+        return grafo_principal;
+    }
 };
 
 JuegoPrincipal::JuegoPrincipal() {
@@ -124,6 +131,7 @@ void JuegoPrincipal::generar_local() {
     try {
         locales.alta(nombre_local, nuevo_local);
         std::cout << "Local generado: " << nombre_local << " - Prioridad: " << prioridad << "\n";
+        grafo_principal.agregar_vertice();
     } catch (const diccionario_exception& e) {
         std::cerr << "Error al insertar local en el diccionario.\n";
     }
@@ -191,7 +199,7 @@ void JuegoPrincipal::generar_pedido() {
         size_t indice_origen, indice_destino;
         int peso;
         std::cout << "Seleccione el índice del local de origen: ";
-        std::cin >> indice_origen;
+        std::cin >> indice_origen ;
         std::cout << "Seleccione el índice del local de destino: ";
         std::cin >> indice_destino;
         std::cout << "Ingrese el peso del paquete: ";
@@ -202,6 +210,7 @@ void JuegoPrincipal::generar_pedido() {
             pedidos.alta(pedido);
             std::cout << "Se generó un pedido desde " << locales_en_orden[indice_origen].obtener_nombre()
                       << " a " << locales_en_orden[indice_destino].obtener_nombre() << " con peso " << peso << "\n";
+                      grafo_principal.modificar_arista(indice_origen,indice_destino, peso);
         } else {
             std::cout << "Índices de locales no válidos.\n";
         }

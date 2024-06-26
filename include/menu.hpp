@@ -6,6 +6,7 @@
 #include "iostream"
 #include <string>
 
+
 using namespace std;
 
 class Menu {
@@ -27,21 +28,20 @@ public:
 };
 
 void Menu::menu_inicial() {
-
-    cout << TITULO_MENU << endl;
+    std::cout << TITULO_MENU << std::endl;
 
     JuegoPrincipal juego_principal;
     juego_principal.jugar();
 
     bool entrada_juego_secundario = jugar_juego_secundario();
 
-    if(entrada_juego_secundario){
-        JuegoSecundario juego_secundario;
+    if (entrada_juego_secundario) {
+        JuegoSecundario juego_secundario(juego_principal.obtener_grafo());
         juego_secundario.obtener_caminos_transitados();
     }
-    cout << FIN_JUEGO << endl;
-}
 
+    std::cout << FIN_JUEGO << std::endl;
+}
 bool Menu::jugar_juego_secundario(){
     bool entrada;
     int opcion_elegida;
