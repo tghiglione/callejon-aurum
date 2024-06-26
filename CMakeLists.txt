@@ -34,8 +34,8 @@ set(ARCHIVOS_FUENTE
         include/menu.hpp
         include/pedido.hpp
         include/local.hpp
-        include/casillero.hpp
         include/tablero.hpp
+        include/casillero.hpp
 )
 
 add_executable(AyED_TPG_1c2024
