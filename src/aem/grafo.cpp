@@ -115,13 +115,6 @@ std::vector<arista> grafo::obtener_aem() {
             unir_subconjuntos(origen, destino, padres);
         }
     }
-
-
-/*
-    imprimir_aem(arbol_expansion_maxima); */
-/*     int costo_total = calcular_costo_total(arbol_expansion_maxima);
-    std::cout << "Costo total del AEM: " << costo_total << std::endl;
- */
     return arbol_expansion_maxima;
 }
 
@@ -133,7 +126,6 @@ void grafo::incrementar_contador_pedidos(size_t origen, size_t destino) {
         } else {
             matriz_adyacencia.elemento(origen, destino)++;
         }
-        // Si es un grafo no dirigido, también incrementa en la otra dirección
         if (matriz_adyacencia.elemento(destino, origen) == INFINITO) {
             matriz_adyacencia.elemento(destino, origen) = 1;
         } else {
@@ -146,55 +138,3 @@ void grafo::incrementar_contador_pedidos(size_t origen, size_t destino) {
 int grafo::obtener_contador_pedidos(size_t origen, size_t destino) {
     return matriz_adyacencia.elemento(origen, destino);
 }
-
-
-
-
-/*
-void grafo::imprimir_aem( std::vector<arista>& arbol_expansion_maxima)  {
-    std::cout << "Senderos a priorizar, por cantidad de pedidos:" << std::endl;
-    for ( arista& arista : arbol_expansion_maxima) {
-        imprimir_arista(arista);
-    }
-}
-
-void grafo::imprimir_arista( arista& arista) {
-    std::pair<size_t, size_t> vertices = arista.obtener_vertices();
-    int peso = arista.obtener_peso();
-    char nombre_local_salida = char (65+vertices.first);
-    char nombre_local_desitino = char(65+vertices.second);
-    std::cout << "Mejorar camino entre : Local " << nombre_local_salida << " -> Local " << nombre_local_desitino << ", Cantidad de pedidos : " << peso << std::endl;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* int grafo::calcular_costo_total(std::vector<arista>& aristas) {
-    int costo_total = 0;
-    for (auto& arista : aristas) {
-        costo_total += arista.obtener_peso();
-    }
-    return costo_total;
-} */
-/*
-void grafo::imprimir_resultado_aem(std::vector<arista>& aem) {
-    std::cout << "Resultados del Árbol de Expansión Mínima (AEM):" << std::endl;
-    for ( auto& arista : aem) {
-        auto vertices = arista.obtener_vertices();
-        auto peso = arista.obtener_peso();
-        std::cout << "mejora camino " << vertices.first << " -> " << vertices.second << ": " << peso << std::endl;
-    }
-
-} */
