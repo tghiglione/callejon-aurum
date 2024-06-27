@@ -68,7 +68,22 @@ public:
     //Pre: -
     //Post: Muestra por pantalla el tablero
     void imprimir_tablero() {
+        std::cout << "    ";
+        for (size_t k = 0; k < COLUMNAS_CALLEJON; k++){
+            if (k < 10){
+                std::cout << " " << k << " ";
+            } else {
+                std::cout << " " << k;
+            }
+        }
+        std::cout << "\n";
         for (size_t i = 0; i < FILAS_CALLEJON; i++) {
+            if (i < 10){
+                std::cout << "  " << i << " ";
+            } else {
+                std::cout << " " << i << " ";
+            }
+
             for (size_t j = 0; j < COLUMNAS_CALLEJON; j++) {
                 if (tablero.elemento(i, j) == Casillero::DISPONIBLE) {
                     std::cout << COLOR_DISPONIBLE;
