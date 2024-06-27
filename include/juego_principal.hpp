@@ -37,7 +37,7 @@ const std::vector<std::string> NOMBRES = {
 
 class JuegoPrincipal {
 private:
-//PILIIIIIIIII
+
     grafo grafo_principal; 
     static bool comparar_diccionario(std::string clave1, std::string clave2);
     static bool comparar_heap(Pedido pedido1, Pedido pedido2);
@@ -82,7 +82,8 @@ public:
     // Pre: -
     // Post: Controla la lógica del juego principal
     void jugar();
-
+    // Pre: -
+    // Post: Devuelve una referencia al grafo principal del juego.
     grafo& obtener_grafo() {
         return grafo_principal;
     }

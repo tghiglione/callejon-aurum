@@ -5,21 +5,16 @@
 #include "matriz.hpp"
 #include "arista.hpp"
 
-// Usen un valor suficientemente grande para no tener problemas.
-// También, pueden usar un valor negativo.
+
 const int INFINITO = -1;
 
-// Este grafo va a calcular el arbol de expansión mínimo/máximo (MST).
+
 class grafo {
 private:
     matriz<int> matriz_adyacencia;
 public:
 
-    // Incrementa el contador de pedidos entre los locales origen y destino
-    void incrementar_contador_pedidos(size_t origen, size_t destino);
 
-    // Obtiene la cantidad de pedidos entre los locales origen y destino
-    int obtener_contador_pedidos(size_t origen, size_t destino);
     // Constructores.
     grafo() = default;
 
@@ -52,18 +47,27 @@ public:
 
     // Pre: El grafo representado debe ser conexo y no direccionado (asumirlo).
     // Post: Devuelve el arbol de expansión mínimo/máximo.
-
     std::vector<arista> obtener_aem() ;
+
+    // Pre: -
+    // Post: Devuelve un vector con todas las aristas del grafo.
     std::vector<arista> obtener_todas_las_aristas(matriz<int>& matriz_adyacencia) ;
+    // Pre:-
+    // Post: Devuelve true si el peso de la primera arista es mayor que el peso de la segunda arista.
     static bool comparar_aristas_por_peso(arista& primera_arista, arista& segunda_arista);
+    // Pre: el vértice debe ser válido.
+    // Post: Devuelve el padre del vértice en el conjunto de disjoint sets.
     static size_t encontrar_padre(size_t vertice, std::vector<size_t>& padres);
+    // Pre: Los conjuntos deben ser válidos .
+    // Post: Une los dos subconjuntos en uno solo.
     static void unir_subconjuntos(size_t conjunto_a, size_t conjunto_b, std::vector<size_t>& padres);
+    // Pre:  los vértices origen y destino deben ser válidos.
+    // Post: Incrementa el contador de pedidos entre los vértices origen y destino. Si la arista no existe, se crea con un peso de 1.
+    void incrementar_contador_pedidos(size_t origen, size_t destino);
+    // Pre: los vértices origen y destino deben ser válidos.
+    // Post: Devuelve el contador de pedidos entre los vértices origen y destino.
+    int obtener_contador_pedidos(size_t origen, size_t destino);
 
-
-/*     void imprimir_arista( arista& arista) ;
-
-    void imprimir_aem( std::vector<arista>& arbol_expansion_maxima) ;
-   // int calcular_costo_total(std::vector<arista>& aristas); */
 };
 
 #endif

@@ -12,15 +12,17 @@ private:
 
 
 public:
+    // Pre: Recibe una referencia a un objeto de tipo grafo.
+    // Post: Inicializa el objeto JuegoSecundario con el grafo proporcionado.
     JuegoSecundario(grafo& grafo_principal) : grafo_principal(grafo_principal) {}
-
-
-    /* Pre:
-     * Post:
-     */
+    // Pre: -
+    // Post: Devuelve un vector de aristas que representan el árbol de expansión máxima (AEM) del grafo principal.
     std::vector<arista> obtener_caminos_transitados();
-
+    // Pre: Recibe una referencia a un objeto de tipo arista.
+    // Post: Imprime la información de la arista.
     void imprimir_arista( arista& arista) ;
+     // Pre: Recibe una referencia a un vector de aristas que representan el AEM.
+    // Post: Imprime la información del árbol de expansión máxima.
     void imprimir_aem( std::vector<arista>& arbol_expansion_maxima) ;
 
 };
