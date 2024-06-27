@@ -2,7 +2,7 @@
 #define AYED_TPG_1C2024_MAPA_HPP
 #include "matriz.hpp"
 #include "coordenada.hpp"
-#include "tablero.hpp"
+#include "juego/tablero.hpp"
 
 /* Esta clase es la encargada de decirle a a_estrella si la posición de un vecino es válida o no.
  * Queda a criterio del grupo como implementarla. La idea es que a_estrella no tenga detalles de
