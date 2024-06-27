@@ -29,13 +29,13 @@ set(ARCHIVOS_FUENTE
         include/aem/grafo.hpp
         src/aem/arista.cpp
         include/aem/arista.hpp
-        include/juego_principal.hpp
-        include/juego_secundario.hpp
-        include/menu.hpp
-        include/pedido.hpp
-        include/local.hpp
-        include/tablero.hpp
-        include/casillero.hpp
+        include/juego/juego_principal.hpp
+        include/juego/juego_secundario.hpp
+        include/juego/menu.hpp
+        include/juego/pedido.hpp
+        include/juego/local.hpp
+        include/juego/tablero.hpp
+        include/juego/casillero.hpp
 )
 
 add_executable(AyED_TPG_1c2024
