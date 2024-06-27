@@ -20,9 +20,10 @@ private:
 public:
 
     // Pre: -
-    // Post: Invoca al juego principal y te da la opcion de jugar al secundario
+    // Post: Invoca al juego principal y te da la opcion de jugar al secundario.
     void menu_inicial();
-
+    // Pre: -
+    // Post:Muestra el menú del juego secundario y devuelve true si se elige jugar.
     bool jugar_juego_secundario();
 
 };
