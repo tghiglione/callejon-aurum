@@ -2,14 +2,18 @@
 #define AYED_TPG_1C2024_JUEGO_SECUNDARIO_HPP
 #include "iostream"
 #include "vector"
-#include "aem/arista.hpp" 
-#include "aem/grafo.hpp"
+#include "arista.hpp" 
+#include "grafo.hpp"
+#include "juego_principal.hpp"
 
 class JuegoSecundario{
 private:
-    grafo grafo_principal; 
+    grafo& grafo_principal;
+
 
 public:
+    JuegoSecundario(grafo& grafo_principal) : grafo_principal(grafo_principal) {}
+
 
     /* Pre:
      * Post:
@@ -38,10 +42,7 @@ void JuegoSecundario::imprimir_aem( std::vector<arista>& arbol_expansion_maxima)
 void JuegoSecundario::imprimir_arista( arista& arista) {
     std::pair<size_t, size_t> vertices = arista.obtener_vertices();
     int peso = arista.obtener_peso();
-    char nombre_local_salida = char (65+vertices.first);
-    char nombre_local_desitino = char(65+vertices.second);
-    std::cout << "Mejorar camino entre : Local " << nombre_local_salida << " -> Local " << nombre_local_desitino << ", Cantidad de pedidos : " << peso << std::endl;
+    std::cout << "Mejorar camino entre : Local " << vertices.first << " -> Local " << vertices.second << ", Cantidad de pedidos : " << peso << std::endl;
 }
-
 
 #endif //AYED_TPG_1C2024_JUEGO_SECUNDARIO_HPP

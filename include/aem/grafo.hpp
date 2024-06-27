@@ -7,13 +7,19 @@
 
 // Usen un valor suficientemente grande para no tener problemas.
 // También, pueden usar un valor negativo.
-const int INFINITO = 999;
+const int INFINITO = -1;
 
 // Este grafo va a calcular el arbol de expansión mínimo/máximo (MST).
 class grafo {
 private:
     matriz<int> matriz_adyacencia;
 public:
+
+    // Incrementa el contador de pedidos entre los locales origen y destino
+    void incrementar_contador_pedidos(size_t origen, size_t destino);
+
+    // Obtiene la cantidad de pedidos entre los locales origen y destino
+    int obtener_contador_pedidos(size_t origen, size_t destino);
     // Constructores.
     grafo() = default;
 
