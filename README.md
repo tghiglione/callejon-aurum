@@ -9,20 +9,20 @@
 
 ### Integrantes:
 
-#### APELLIDO, NOMBRE - PADRÓN
+#### Ledesma, Cristian - 111426
 
-#### APELLIDO, NOMBRE - PADRÓN
+#### Ghiglione, Tomas - 104747
 
-#### APELLIDO, NOMBRE - PADRÓN
+#### Laganga, Mauricio - 109696
 
-#### APELLIDO, NOMBRE - PADRÓN
+#### Aguilar, Janet del Pilar - 108477
 
-#### APELLIDO, NOMBRE - PADRÓN
+#### Cuba, Elias - 106933
 
 ### Documentos:
 
-1. [Informe de complejidad algorítmica](https://www.enlaceaca.com/)
-2. [Video de demostración del programa](https://www.enlaceaca.com/)
+1. [Informe de complejidad algorítmica](https://docs.google.com/document/d/1bBEdkRj1uZad0FWWQShnQFNYse5IHS-VP4Qq2kYa29U/edit?usp=sharing)
+2. [Video de demostración del programa](https://youtu.be/t6elhDuUTsw)
 
 ### Compilación
 
