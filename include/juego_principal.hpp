@@ -192,16 +192,16 @@ void JuegoPrincipal::generar_pedido() {
     } else {
         std::cout << "Locales disponibles:\n";
         std::vector<Local> locales_en_orden = locales.inorder();
-        for (size_t i = 0; i < locales_en_orden.size(); ++i) {
-            std::cout << i << ". " << locales_en_orden[i].obtener_nombre() << "\n";
+        for (size_t i = 0; i < locales_en_orden.size(); i++) {
+            std::cout << i + 1 << ". " << locales_en_orden[i].obtener_nombre() << "\n";
         }
 
         size_t indice_origen, indice_destino;
         int peso;
         std::cout << "Seleccione el índice del local de origen: ";
-        std::cin >> indice_origen;
+        std::cin >> indice_origen; indice_origen--;
         std::cout << "Seleccione el índice del local de destino: ";
-        std::cin >> indice_destino;
+        std::cin >> indice_destino; indice_destino--;
         std::cout << "Ingrese el peso del paquete: ";
         std::cin >> peso;
 
@@ -257,8 +257,8 @@ void JuegoPrincipal::jugar() {
                 }
 
                 if (locales.esta_en_diccionario(nombre_local)) {
-                    std::cout << "Prioridad: " << locales[nombre_local].obtener_prioridad();
-                    std::cout << "Coordenada: (" << locales[nombre_local].obtener_coordenada().x() << ";" << locales[nombre_local].obtener_coordenada().y() << ")";
+                    std::cout << "Prioridad: " << locales[nombre_local].obtener_prioridad() << "\n";
+                    std::cout << "Coordenada: (" << locales[nombre_local].obtener_coordenada().x() << ";" << locales[nombre_local].obtener_coordenada().y() << ")\n\n";
                 } else {
                     std::cout << "No se encuentra dicho local";
                 }
